@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CV - Harrison Cook</title>
+        <style>
+            @font-face {
+                font-family: "Adwaita Mono";
+                src: url("/public/fonts/AdwaitaMono-Regular.ttf");
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Adwaita Mono";
+                src: url("/public/fonts/AdwaitaMono-Bold.ttf");
+                font-weight: bold;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Adwaita Mono";
+                src: url("/public/fonts/AdwaitaMono-Italic.ttf");
+                font-weight: normal;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: "Adwaita Mono";
+                src: url("/public/fonts/AdwaitaMono-BoldItalic.ttf");
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Adwaita Mono", monospace;
+                font-size: 11pt;
+                background: #fff;
+                color: #000;
+                margin: 1.5cm;
+                max-width: 18cm;
+            }
+
+            /* Header */
+            .cv-header {
+                margin-bottom: 1em;
+            }
+
+            .cv-header h1 {
+                font-size: 22pt;
+                margin: 0 0 0.2em 0;
+            }
+
+            .cv-header .subtitle {
+                font-size: 11pt;
+                margin: 0 0 0.3em 0;
+            }
+
+            .cv-header .contacts {
+                font-size: 10pt;
+                color: #444;
+            }
+
+            .cv-header .contacts a {
+                color: #444;
+                text-decoration: none;
+            }
+
+            /* Sections */
+            h2 {
+                font-size: 10pt;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin: 1.2em 0 0.5em 0;
+                padding-bottom: 0.25em;
+                border-bottom: 1px solid #000;
+            }
+
+            /* Job entries */
+            .job {
+                margin-bottom: 0.9em;
+            }
+
+            .job-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .job-header .title {
+                font-weight: bold;
+                font-size: 11pt;
+            }
+
+            .job-header .meta {
+                font-size: 10pt;
+                color: #444;
+                white-space: nowrap;
+                margin-left: 1em;
+            }
+
+            .job ul {
+                margin: 0.3em 0 0 0;
+                padding-left: 1.5em;
+            }
+
+            .job li {
+                margin-bottom: 0.2em;
+                line-height: 1.5;
+            }
+
+            /* Education */
+            .edu {
+                margin-bottom: 0.6em;
+            }
+
+            .edu .title {
+                font-weight: bold;
+                margin: 0 0 0.15em 0;
+            }
+
+            .edu .meta {
+                font-size: 10pt;
+                color: #444;
+                margin: 0 0 0.15em 0;
+            }
+
+            .edu .detail {
+                font-size: 10pt;
+                color: #444;
+                margin: 0;
+            }
+
+            /* Skills */
+            .skills {
+                display: grid;
+                grid-template-columns: max-content 1fr;
+                gap: 0.3em 4ch;
+                margin-top: 0.5em;
+                font-size: 10.5pt;
+            }
+
+            .skills .label {
+                font-weight: bold;
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="cv-header">
+            <h1>Harrison Cook</h1>
+            <p class="subtitle">Software Engineer :: New Zealand</p>
+            <p class="contacts">
+                <a href="mailto:contact@honsoncooky.dev">contact@honsoncooky.dev</a>
+                ::
+                <a href="https://github.com/HonsonCooky">github.com/HonsonCooky</a>
+                ::
+                <a href="https://www.linkedin.com/in/HonsonCooky">linkedin.com/in/HonsonCooky</a>
+            </p>
+        </header>
+
+        <h2>Work Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="title">Software Engineer - Splitting Point Studios</span>
+                <span class="meta">Sept 2025-Present :: Remote, NZ</span>
+            </div>
+            <ul>
+                <li>
+                    Built APIs and extensions for Roblox games in Go, handling high-throughput actions at scale.
+                </li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="title">Software Engineer - Xero</span>
+                <span class="meta">Aug 2024-Sept 2025 :: Wellington, NZ</span>
+            </div>
+            <ul>
+                <li>
+                    Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows
+                    to ship features without breaking things.
+                </li>
+                <li>
+                    Helped design the replacement platform in modern .NET while keeping the legacy system running.
+                </li>
+                <li>
+                    On-call for production incidents across systems outside my squad's scope.
+                </li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="title">Software Engineer - Z Energy</span>
+                <span class="meta">Nov 2021-Aug 2024 :: Wellington, NZ</span>
+            </div>
+            <ul>
+                <li>
+                    Maintained a distributed TypeScript microservices ecosystem processing millions of daily requests.
+                </li>
+                <li>
+                    Built integrations with third-party vendors and legacy platforms, including data pipelines to clean
+                    and transform incoming datasets.
+                </li>
+                <li>
+                    Shipped production code with a focus on reliability and compliance.
+                </li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="title">Software Engineer Intern - Raygun</span>
+                <span class="meta">Nov 2020-Feb 2021 :: Wellington, NZ</span>
+            </div>
+            <ul>
+                <li>
+                    Designed, developed, and published a React Native NPM library for Raygun's crash reporting and
+                    monitoring.
+                </li>
+            </ul>
+        </div>
+
+        <h2>Education</h2>
+
+        <div class="edu">
+            <p class="title">Bachelor of Engineering (First Class Honours), Software Engineering</p>
+            <p class="meta">2018-2021 :: Victoria University of Wellington</p>
+            <p class="detail">Specialization: Networked Applications</p>
+            <p class="detail">Dean's List for Academic Excellence 2018-2021</p>
+        </div>
+
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <span class="label">Languages</span>
+            <span>TypeScript, C#, Go, Bash, PowerShell, Luau</span>
+            <span class="label">Frameworks</span>
+            <span>.NET, Node.js, React, ASP.NET, React Native</span>
+            <span class="label">Cloud</span>
+            <span>AWS, Azure</span>
+            <span class="label">Infrastructure</span>
+            <span>Git, Terraform, GitHub Actions</span>
+            <span class="label">Data</span>
+            <span>Postgres, SQL Server, DynamoDB, Redis, Cosmos DB</span>
+            <span class="label">Platforms</span>
+            <span>Linux, Windows, Roblox Studio</span>
+        </div>
+    </body>
+</html>
