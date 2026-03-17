@@ -1,58 +1,80 @@
-/* Adwaita Mono font */
+/* Iosevka -- mono for code and chrome */
 @font-face {
-    font-family: "Adwaita Mono";
-    src: url("/public/fonts/AdwaitaMono-Regular.ttf");
+    font-family: "Iosevka";
+    src: url("/public/fonts/Iosevka-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: "Adwaita Mono";
-    src: url("/public/fonts/AdwaitaMono-Bold.ttf");
+    font-family: "Iosevka";
+    src: url("/public/fonts/Iosevka-Bold.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: "Adwaita Mono";
-    src: url("/public/fonts/AdwaitaMono-Italic.ttf");
+    font-family: "Iosevka";
+    src: url("/public/fonts/Iosevka-Italic.woff2") format("woff2");
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
-    font-family: "Adwaita Mono";
-    src: url("/public/fonts/AdwaitaMono-BoldItalic.ttf");
+    font-family: "Iosevka";
+    src: url("/public/fonts/Iosevka-BoldItalic.woff2") format("woff2");
     font-weight: bold;
     font-style: italic;
 }
 
-/* Zed One Dark (default) */
+/* Iosevka Aile -- sans for prose */
+@font-face {
+    font-family: "Iosevka Aile";
+    src: url("/public/fonts/IosevkaAile-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Iosevka Aile";
+    src: url("/public/fonts/IosevkaAile-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Iosevka Aile";
+    src: url("/public/fonts/IosevkaAile-Italic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Iosevka Aile";
+    src: url("/public/fonts/IosevkaAile-BoldItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Brutalist Dark -- harsh, readable, no apologies */
 :root {
-    --bg: #282c33;
-    --surface: #2f343e;
-    --fg: #dce0e5;
-    --fg-muted: #a9afbc;
-    --comment: #5d636f;
-    --accent: #74ade8;
-    --border: #464b57;
-    --border-focus: #47679e;
-    --string: #a1c181;
-    --keyword: #b477cf;
-    --number: #bf956a;
+    --bg: #0c0c0c;
+    --surface: #151515;
+    --fg: #d5d5d5;
+    --fg-muted: #777;
+    --comment: #444;
+    --accent: #fff;
+    --border: #2a2a2a;
+    --string: #5f5;
+    --nav: #55f;
 }
 
-/* Zed One Light */
+/* Brutalist Light -- black ink, white paper */
 @media (prefers-color-scheme: light) {
     :root {
-        --bg: #fafafa;
-        --surface: #ebebec;
-        --fg: #242529;
-        --fg-muted: #58585a;
-        --comment: #a2a3a7;
-        --accent: #5c78e2;
-        --border: #c9c9ca;
-        --border-focus: #7d82e8;
-        --string: #50a14f;
-        --keyword: #a449ab;
-        --number: #ad6e25;
+        --bg: #fff;
+        --surface: #eee;
+        --fg: #000;
+        --fg-muted: #444;
+        --comment: #777;
+        --accent: #000;
+        --border: #bbb;
+        --string: #2a7a2a;
+        --nav: #2a2a7a;
     }
 }
 
@@ -64,7 +86,7 @@
 }
 
 body {
-    font-family: "Adwaita Mono", "JetBrains Mono", monospace;
+    font-family: "Iosevka Aile", sans-serif;
     background-color: var(--bg);
     color: var(--fg);
     margin: 0;
@@ -74,25 +96,25 @@ body {
     flex-direction: column;
 }
 
-/* Links */
-a {
+/* Links -- always underlined, no hiding */
+a,
+a:visited {
     color: var(--accent);
-    text-decoration: none;
-}
-a:hover {
     text-decoration: underline;
 }
 
-/* Code */
+/* Code -- boxed, stands out */
 code {
+    font-family: "Iosevka", monospace;
     color: var(--string);
     background: var(--surface);
-    padding: 0.1em 0.3em;
-    border-radius: 2px;
+    padding: 0.2em 0.4em;
+    border: 1px solid var(--fg);
 }
 
 /* Header - inline PS1 prompt */
 header {
+    font-family: "Iosevka", monospace;
     border-bottom: 1px solid var(--border);
     padding: 0.75rem 1.5rem;
     background-color: var(--surface);
@@ -110,7 +132,7 @@ header .ps1-user {
 
 /* ~/ */
 header .ps1-path {
-    color: var(--accent);
+    color: var(--nav);
     white-space: nowrap;
 }
 
@@ -134,7 +156,7 @@ nav summary {
     display: inline;
     list-style: none;
     cursor: pointer;
-    color: var(--accent);
+    color: var(--nav);
     user-select: none;
 }
 
@@ -155,11 +177,15 @@ nav ul {
     z-index: 10;
 }
 
+nav ul li a,
+nav summary {
+    text-decoration: none;
+}
+
 nav ul li a {
     display: block;
     padding: 0.35rem 1rem;
-    color: var(--fg-muted);
-    text-decoration: none;
+    color: var(--nav);
 }
 
 nav ul li a:hover {
@@ -168,7 +194,7 @@ nav ul li a:hover {
 }
 
 nav ul li a[aria-current="page"] {
-    color: var(--accent);
+    color: var(--nav);
 }
 
 /* Profile */
@@ -200,11 +226,10 @@ h1 {
 p,
 li {
     color: var(--fg);
-    line-height: 1.7;
+    line-height: 2;
 }
 
-small,
-small * {
+small {
     color: var(--fg-muted);
 }
 
@@ -220,22 +245,28 @@ article {
 
 /* Footer */
 footer {
+    font-family: "Iosevka", monospace;
     border-top: 1px solid var(--border);
     padding: 0.75rem 1.5rem;
     background-color: var(--surface);
 }
 
 footer small {
-    color: var(--comment);
+    color: var(--fg);
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem 0.5rem;
     align-items: center;
 }
 
+footer a,
+footer a:visited {
+    color: var(--nav);
+}
+
 /* Buttons */
 button {
-    font-family: inherit;
+    font-family: "Iosevka", monospace;
     background: var(--surface);
     color: var(--fg);
     border: 1px solid var(--border);
