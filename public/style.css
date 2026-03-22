@@ -1,51 +1,39 @@
-/* Iosevka -- mono for code and chrome */
+/* Adwaita Sans -- variable font for prose */
 @font-face {
-    font-family: "Iosevka";
-    src: url("/public/fonts/Iosevka-Regular.woff2") format("woff2");
-    font-weight: normal;
+    font-family: "Adwaita Sans";
+    src: url("/public/fonts/AdwaitaSans-Regular.ttf") format("truetype");
+    font-weight: 100 900;
     font-style: normal;
 }
 @font-face {
-    font-family: "Iosevka";
-    src: url("/public/fonts/Iosevka-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Iosevka";
-    src: url("/public/fonts/Iosevka-Italic.woff2") format("woff2");
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Iosevka";
-    src: url("/public/fonts/Iosevka-BoldItalic.woff2") format("woff2");
-    font-weight: bold;
+    font-family: "Adwaita Sans";
+    src: url("/public/fonts/AdwaitaSans-Italic.ttf") format("truetype");
+    font-weight: 100 900;
     font-style: italic;
 }
 
-/* Iosevka Aile -- sans for prose */
+/* Adwaita Mono -- mono for code and chrome */
 @font-face {
-    font-family: "Iosevka Aile";
-    src: url("/public/fonts/IosevkaAile-Regular.woff2") format("woff2");
+    font-family: "Adwaita Mono";
+    src: url("/public/fonts/AdwaitaMono-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: "Iosevka Aile";
-    src: url("/public/fonts/IosevkaAile-Bold.woff2") format("woff2");
+    font-family: "Adwaita Mono";
+    src: url("/public/fonts/AdwaitaMono-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: "Iosevka Aile";
-    src: url("/public/fonts/IosevkaAile-Italic.woff2") format("woff2");
+    font-family: "Adwaita Mono";
+    src: url("/public/fonts/AdwaitaMono-Italic.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
-    font-family: "Iosevka Aile";
-    src: url("/public/fonts/IosevkaAile-BoldItalic.woff2") format("woff2");
+    font-family: "Adwaita Mono";
+    src: url("/public/fonts/AdwaitaMono-BoldItalic.ttf") format("truetype");
     font-weight: bold;
     font-style: italic;
 }
@@ -86,7 +74,7 @@
 }
 
 body {
-    font-family: "Iosevka Aile", sans-serif;
+    font-family: "Adwaita Sans", sans-serif;
     background-color: var(--bg);
     color: var(--fg);
     margin: 0;
@@ -97,15 +85,14 @@ body {
 }
 
 /* Links -- always underlined, no hiding */
-a,
-a:visited {
+a {
     color: var(--accent);
     text-decoration: underline;
 }
 
 /* Code -- boxed, stands out */
 code {
-    font-family: "Iosevka", monospace;
+    font-family: "Adwaita Mono", monospace;
     color: var(--string);
     background: var(--surface);
     padding: 0.2em 0.4em;
@@ -114,7 +101,7 @@ code {
 
 /* Header - inline PS1 prompt */
 header {
-    font-family: "Iosevka", monospace;
+    font-family: "Adwaita Mono", monospace;
     border-bottom: 1px solid var(--border);
     padding: 0.75rem 1.5rem;
     background-color: var(--surface);
@@ -189,12 +176,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--fg);
-    background-color: var(--bg);
+    color: var(--accent);
+    background-color: var(--border);
 }
 
 nav ul li a[aria-current="page"] {
     color: var(--nav);
+}
+
+nav ul li a[aria-current="page"]:hover {
+    color: var(--accent);
+    background-color: var(--border);
 }
 
 /* Profile */
@@ -245,7 +237,7 @@ article {
 
 /* Footer */
 footer {
-    font-family: "Iosevka", monospace;
+    font-family: "Adwaita Mono", monospace;
     border-top: 1px solid var(--border);
     padding: 0.75rem 1.5rem;
     background-color: var(--surface);
@@ -266,7 +258,7 @@ footer a:visited {
 
 /* Buttons */
 button {
-    font-family: "Iosevka", monospace;
+    font-family: "Adwaita Mono", monospace;
     background: var(--surface);
     color: var(--fg);
     border: 1px solid var(--border);
