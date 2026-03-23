@@ -1,4 +1,4 @@
-/* Adwaita Sans -- variable font for prose */
+/* Adwaita Sans */
 @font-face {
     font-family: "Adwaita Sans";
     src: url("/public/fonts/AdwaitaSans-Regular.ttf") format("truetype");
@@ -12,7 +12,7 @@
     font-style: italic;
 }
 
-/* Adwaita Mono -- mono for code and chrome */
+/* Adwaita Mono */
 @font-face {
     font-family: "Adwaita Mono";
     src: url("/public/fonts/AdwaitaMono-Regular.ttf") format("truetype");
@@ -38,35 +38,32 @@
     font-style: italic;
 }
 
-/* Brutalist Dark -- harsh, readable, no apologies */
+/* Ayu Dark */
 :root {
-    --bg: #0c0c0c;
-    --surface: #151515;
-    --fg: #d5d5d5;
-    --fg-muted: #777;
-    --comment: #444;
-    --accent: #fff;
-    --border: #2a2a2a;
-    --string: #5f5;
-    --nav: #55f;
+    --bg: #0b0e14;
+    --surface: #0d1017;
+    --fg: #bfbdb6;
+    --fg-muted: #636a72;
+    --accent: #e6b450;
+    --border: #11151c;
+    --string: #aad94c;
+    --link: #39bae6;
 }
 
-/* Brutalist Light -- black ink, white paper */
+/* Ayu Light */
 @media (prefers-color-scheme: light) {
     :root {
-        --bg: #fff;
-        --surface: #eee;
-        --fg: #000;
-        --fg-muted: #444;
-        --comment: #777;
-        --accent: #000;
-        --border: #bbb;
-        --string: #2a7a2a;
-        --nav: #2a2a7a;
+        --bg: #fafafa;
+        --surface: #f0f0f0;
+        --fg: #575f66;
+        --fg-muted: #8a9199;
+        --accent: #ff9940;
+        --border: #d8d8d7;
+        --string: #86b300;
+        --link: #399ee6;
     }
 }
 
-/* Reset & base */
 *,
 *::before,
 *::after {
@@ -75,219 +72,36 @@
 
 body {
     font-family: "Adwaita Sans", sans-serif;
-    background-color: var(--bg);
+    background: var(--bg);
     color: var(--fg);
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding: 2rem 1.5rem;
+    max-width: 60ch;
+    line-height: 1.7;
 }
 
-/* Links -- always underlined, no hiding */
 a {
-    color: var(--accent);
-    text-decoration: underline;
+    color: var(--link);
 }
 
-/* Code -- boxed, stands out */
 code {
     font-family: "Adwaita Mono", monospace;
     color: var(--string);
     background: var(--surface);
-    padding: 0.2em 0.4em;
-    border: 1px solid var(--fg);
-}
-
-/* Header - inline PS1 prompt */
-header {
-    font-family: "Adwaita Mono", monospace;
-    border-bottom: 1px solid var(--border);
-    padding: 0.75rem 1.5rem;
-    background-color: var(--surface);
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0;
-}
-
-/* harrison@cook: */
-header .ps1-user {
-    color: var(--string);
-    white-space: nowrap;
-}
-
-/* ~/ */
-header .ps1-path {
-    color: var(--nav);
-    white-space: nowrap;
-}
-
-/* $ */
-header .ps1-suffix {
-    color: var(--string);
-    white-space: nowrap;
-}
-
-/* Nav dropdown using <details>/<summary> - no JS */
-nav {
-    display: inline;
-}
-
-nav details {
-    display: inline-block;
-    position: relative;
-}
-
-nav summary {
-    display: inline;
-    list-style: none;
-    cursor: pointer;
-    color: var(--nav);
-    user-select: none;
-}
-
-nav summary::-webkit-details-marker {
-    display: none;
-}
-
-nav ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin: 0.25rem 0 0 0;
-    padding: 0.25rem 0;
-    list-style: none;
-    background-color: var(--surface);
     border: 1px solid var(--border);
-    min-width: 10rem;
-    z-index: 10;
-}
-
-nav ul li a,
-nav summary {
-    text-decoration: none;
-}
-
-nav ul li a {
-    display: block;
-    padding: 0.35rem 1rem;
-    color: var(--nav);
-}
-
-nav ul li a:hover {
-    color: var(--accent);
-    background-color: var(--border);
-}
-
-nav ul li a[aria-current="page"] {
-    color: var(--nav);
-}
-
-nav ul li a[aria-current="page"]:hover {
-    color: var(--accent);
-    background-color: var(--border);
-}
-
-/* Profile */
-.profile {
-    width: 10rem;
-    border: 2px solid var(--border);
-}
-
-/* Main content */
-main {
-    flex: 1;
-    padding: 2rem 1.5rem;
-    max-width: 80ch;
-    width: 100%;
-}
-
-h1,
-h2,
-h3 {
-    color: var(--fg);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.15em 0.4em;
+    font-size: 0.9em;
 }
 
 h1 {
     color: var(--accent);
+    margin: 0 0 0.5rem 0;
 }
 
-p,
-li {
-    color: var(--fg);
-    line-height: 2;
+p {
+    margin: 0 0 1rem 0;
 }
 
 small {
     color: var(--fg-muted);
-}
-
-hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2rem 0;
-}
-
-article {
-    margin-bottom: 1.5rem;
-}
-
-/* Footer */
-footer {
-    font-family: "Adwaita Mono", monospace;
-    border-top: 1px solid var(--border);
-    padding: 0.75rem 1.5rem;
-    background-color: var(--surface);
-}
-
-footer small {
-    color: var(--fg);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem 0.5rem;
-    align-items: center;
-}
-
-footer a,
-footer a:visited {
-    color: var(--nav);
-}
-
-/* Buttons */
-button {
-    font-family: "Adwaita Mono", monospace;
-    background: var(--surface);
-    color: var(--fg);
-    border: 1px solid var(--border);
-    padding: 0.3em 1em;
-    cursor: pointer;
-}
-
-button:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-/* Print: hide chrome, force light */
-@media print {
-    @page {
-        size: A4 portrait;
-        margin: 1.5cm;
-    }
-
-    header,
-    footer,
-    #print-btn {
-        display: none;
-    }
-    body {
-        background: #fff;
-        color: #000;
-    }
-    a {
-        color: #000;
-    }
 }
