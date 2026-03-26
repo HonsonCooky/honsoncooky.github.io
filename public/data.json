@@ -7,12 +7,12 @@
             "end": null,
             "location": "Remote, NZ",
             "details": [
-                "Leading the backend effort, building Go services on Railway - focused on keeping things simple, scalable, and manageable by a small team.",
-                "Informally managing a growing team; driving technical direction for backend systems.",
-                "Built AWS infrastructure for social gaming services across Splitting Point's Roblox titles.",
+                "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
+                "Driving technical direction for backend systems.",
+                "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
                 "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
             ],
-            "skills": ["Go", "AWS", "Railway", "Luau", "Roblox Studio"]
+            "skills": ["Go", "Railway", "Luau", "Roblox Studio", "AWS", "DevOps"]
         },
         {
             "company": "Xero",
@@ -25,7 +25,7 @@
                 "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
                 "On-call for production incidents across systems outside my squad's scope."
             ],
-            "skills": ["C#", ".NET", "IIS", "Azure"]
+            "skills": ["C#", "IIS", "AWS", "DevOps"]
         },
         {
             "company": "Z Energy",
@@ -38,7 +38,7 @@
                 "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets.",
                 "Grew significantly as an engineer here; the scale and process forced me to understand what kind of developer I wanted to be."
             ],
-            "skills": ["TypeScript", "Node.js", "AWS", "Postgres", "DynamoDB", "Terraform", "GitHub Actions", "Git"]
+            "skills": ["TypeScript", "Azure", "DevOps"]
         },
         {
             "company": "Raygun",
