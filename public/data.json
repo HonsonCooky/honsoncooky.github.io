@@ -2,7 +2,7 @@
     "work": [
         {
             "company": "Splitting Point Studios",
-            "role": "Software Engineer",
+            "role": "Lead Software Engineer",
             "start": "Sept 2025",
             "end": null,
             "location": "Remote, NZ",
@@ -57,15 +57,15 @@
     "education": [
         {
             "institution": "Victoria University of Wellington",
-            "qualification": "BE(Hons), Software Engineering",
+            "qualification": "Bachelor of Engineering with Honours",
+            "major": "Software Engineering",
+            "specialisation": "Networked Applications",
+            "award": "First Class Honours",
             "start": "2018",
             "end": "2021",
             "details": [
-                "First Class Honours",
-                "Specialisation: Networked Applications",
                 "Dean's List for Academic Excellence (2018, 2019, 2020, 2021)"
-            ],
-            "transcript": "/public/documents/transcript_vic_harrison_cook.pdf"
+            ]
         },
         {
             "institution": "Marlborough Boys' College",
@@ -76,27 +76,26 @@
                 "Level 1 with Excellence Endorsement",
                 "Level 2 with Excellence Endorsement",
                 "Level 3 with Excellence Endorsement"
-            ],
-            "transcript": "/public/documents/transcript_mbc_harrison_cook.pdf"
+            ]
         }
     ],
     "interests": [
         {
             "name": "Linux",
-            "summary": "Daily driver. Shell scripting, dotfiles, system administration."
+            "summary": "Daily driver. Keyboard first workflow, shell scripting, dotfiles."
         },
         {
             "name": "Ergonomic Keyboards",
-            "summary": "ZSA Voyager with custom firmware. QMK and ZMK."
-        },
-        {
-            "name": "PC Building",
-            "summary": "Building and maintaining machines. Dual-boot Linux and Windows."
+            "summary": "ZSA Planck EZ, Glove80, and now the ZSA Voyager."
         },
         {
             "name": "Retro Gaming",
-            "summary": "Handhelds, emulation, tinkering with old hardware."
+            "summary": "Upgrading old handhelds and getting into the retro community."
         }
     ],
+    "contact": {
+        "github": "https://github.com/HonsonCooky",
+        "linkedin": "https://www.linkedin.com/in/harrisoncook"
+    },
     "references": []
 }

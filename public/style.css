@@ -40,6 +40,7 @@
 
 /* Ayu Dark */
 :root {
+    color-scheme: light dark;
     --bg: #0b0e14;
     --surface: #0d1017;
     --fg: #bfbdb6;
@@ -82,6 +83,7 @@ body {
 
 a {
     color: var(--link);
+    font-family: "Adwaita Mono", monospace;
 }
 
 code {
@@ -132,6 +134,13 @@ h1 {
 
 .hero h1 {
     font-size: 2.5rem;
+    margin: 0;
+}
+
+.hero h2 {
+    color: var(--fg-muted);
+    font-size: 1.4rem;
+    margin: 0;
 }
 
 @media (max-width: 480px) {
@@ -141,9 +150,8 @@ h1 {
     }
 
     .profile {
-        width: calc(100% - 3rem);
-        height: auto;
-        max-width: 250px;
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -180,20 +188,13 @@ nav {
 }
 
 nav a {
-    margin-right: 0.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.85em;
-    letter-spacing: 0.05em;
+    margin-right: 1em;
     color: var(--fg-muted);
-    border: 1px solid var(--border);
-    padding: 0.2em 0.6em;
 }
 
 nav a:hover,
 nav a[aria-current="page"] {
     color: var(--link);
-    border-color: var(--link);
 }
 
 .meta {

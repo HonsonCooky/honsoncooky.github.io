@@ -1,3 +1,22 @@
+const NAV_LINKS = [
+    { href: "/", label: "home" },
+    { href: "/history.html", label: "history" },
+    { href: "/blogs/", label: "blogs" },
+    { href: "/cv.html", label: "cv" },
+];
+
+function renderNav() {
+    const nav = document.querySelector("nav");
+    if (!nav) return;
+    const path = window.location.pathname;
+    nav.innerHTML = NAV_LINKS.map((link) => {
+        const current = path === link.href || (link.href !== "/" && path.startsWith(link.href));
+        return `<a href="${link.href}"${current ? ' aria-current="page"' : ""}>${link.label}</a>`;
+    }).join("");
+}
+
+renderNav();
+
 async function loadData() {
     const res = await fetch("/public/data.json");
     return res.json();
@@ -24,8 +43,10 @@ function renderEducation(education) {
         <article>
             <h3>${edu.qualification}</h3>
             <p class="meta">${edu.start} - ${edu.end} :: ${edu.institution}</p>
+            ${edu.major ? `<p>Major: ${edu.major}</p>` : ""}
+            ${edu.specialisation ? `<p>Specialisation: ${edu.specialisation}</p>` : ""}
+            ${edu.award ? `<p>Award: ${edu.award}</p>` : ""}
             <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>
-            ${edu.transcript ? `<p><a href="${edu.transcript}" target="_blank">transcript</a></p>` : ""}
         </article>`,
         )
         .join("<hr />");

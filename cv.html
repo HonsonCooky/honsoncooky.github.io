@@ -3,17 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
         <title>CV - Harrison Cook</title>
         <link rel="icon" type="image/png" href="/public/images/favicon.png" />
         <link rel="stylesheet" href="/public/style.css" />
+        <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css" />
         <style>
-            @font-face {
-                font-family: "Adwaita Sans";
-                src: url("/public/fonts/AdwaitaSans-Regular.ttf") format("truetype");
-                font-weight: 100 900;
-                font-style: normal;
-            }
-
             @page {
                 size: A4 portrait;
                 margin: 1.5cm;
@@ -23,8 +18,8 @@
                 font-family: "Adwaita Sans", sans-serif;
                 font-size: 10pt;
                 line-height: 1.4;
-                color: #1a1a1a;
-                background: #fff;
+                color: var(--fg);
+                background: var(--surface);
                 width: 210mm;
                 min-height: 297mm;
                 max-height: 297mm;
@@ -33,30 +28,63 @@
                 margin: 1.5rem auto;
                 border: 1px solid var(--border);
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cv-page .cv-body {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+
+            .cv-page .cv-body section {
+                padding-bottom: 1.5em;
+            }
+
+            .cv-page .cv-body section:last-child {
+                padding-bottom: 0;
             }
 
             .cv-page h1 {
                 font-size: 18pt;
-                color: #1a1a1a;
+                color: var(--accent);
                 margin-bottom: 0.2em;
+            }
+
+            .cv-header {
+                display: flex;
+                align-items: baseline;
+                gap: 16px;
+            }
+
+            .cv-divider {
+                color: var(--fg-muted);
+                font-size: 18pt;
+            }
+
+            .cv-role {
+                font-size: 14pt;
+                color: var(--fg-muted);
             }
 
             .cv-page h2 {
                 font-size: 12pt;
-                color: #1a1a1a;
-                border-bottom: 1px solid #ccc;
+                color: var(--accent);
+                border-bottom: 1px solid var(--border);
                 padding-bottom: 0.2em;
-                margin: 0.8em 0 0.4em 0;
+                margin: 0 0 0.4em 0;
             }
 
             .cv-page h3 {
                 font-size: 10pt;
-                margin: 0.4em 0 0.1em 0;
+                margin: 0.8em 0 0.1em 0;
             }
 
             .cv-page .meta {
                 font-size: 9pt;
-                color: #555;
+                color: var(--fg-muted);
                 margin: 0 0 0.2em 0;
             }
 
@@ -71,12 +99,35 @@
 
             .cv-page .skills {
                 font-size: 9pt;
-                color: #555;
+                color: var(--fg-muted);
                 margin: 0.2em 0;
             }
 
+            .cv-contact {
+                font-size: 9pt;
+                color: var(--fg-muted);
+                margin: 0.5em 0 2em 0;
+                display: flex;
+                justify-content: flex-start;
+                gap: 2em;
+            }
+
+            .cv-contact a {
+                color: var(--fg-muted);
+                font-family: "Adwaita Sans", sans-serif;
+                text-decoration: none;
+                display: flex;
+                align-items: baseline;
+            }
+
+            .cv-contact a i {
+                margin-right: 1ch;
+                font-size: 1.25em;
+            }
+
             .cv-page .summary {
-                margin: 0.3em 0 0.5em 0;
+                margin: 0.3em 0 0;
+                padding-bottom: 1.5em;
             }
 
             .cv-hint {
@@ -87,7 +138,8 @@
 
             @media print {
                 body {
-                    background: none;
+                    background: #fff;
+                    color: #1a1a1a;
                     padding: 0;
                     margin: 0;
                     max-width: none;
@@ -98,6 +150,8 @@
                 }
 
                 .cv-page {
+                    color: #1a1a1a;
+                    background: #fff;
                     border: none;
                     box-shadow: none;
                     margin: 0;
@@ -106,47 +160,81 @@
                     min-height: auto;
                     max-height: auto;
                 }
+
+                .cv-page h1,
+                .cv-page h2 {
+                    color: #1a1a1a;
+                }
+
+                .cv-page h2 {
+                    border-bottom-color: #ccc;
+                }
+
+                .cv-role,
+                .cv-divider {
+                    color: #555;
+                }
+
+                .cv-contact,
+                .cv-contact a {
+                    color: #555;
+                }
+
+                .cv-page .meta,
+                .cv-page .skills {
+                    color: #555;
+                }
             }
         </style>
     </head>
     <body>
-        <nav>
-            <a href="/">home</a>
-            <a href="/history.html">history</a>
-            <a href="/blogs/">blogs</a>
-            <a href="/cv.html" aria-current="page">cv</a>
-        </nav>
+        <nav></nav>
 
         <p class="cv-hint">Ctrl+P to save as PDF</p>
 
         <div class="cv-page">
-            <h1>Harrison Cook</h1>
+            <div class="cv-header">
+                <h1>Harrison Cook</h1>
+                <span class="cv-divider">|</span>
+                <span class="cv-role">Software Engineer</span>
+            </div>
+            <p class="cv-contact" id="cv-contact"></p>
             <p class="summary">
-                Software engineer with a focus on backend systems and a preference for understanding things from the
-                ground up. Experience across Go, C#, and TypeScript in production environments. BE(Hons) in Software
-                Engineering.
+                Born into a family addicted to music and theatre, I spent years on stage before calculus and physics
+                pulled me in a different direction. The result is a bit of a wild mix - a socialite nerd with a thing
+                for computers. I've built production systems in Go, C#, and TypeScript, and outside of work I chase
+                low level programming in C - as close to the bits as possible.
             </p>
 
-            <section id="cv-work">
-                <h2>Work</h2>
-            </section>
+            <div class="cv-body">
+                <section id="cv-work">
+                    <h2>Work</h2>
+                </section>
 
-            <section id="cv-education">
-                <h2>Education</h2>
-            </section>
+                <section id="cv-education">
+                    <h2>Education</h2>
+                </section>
 
-            <section id="cv-skills">
-                <h2>Skills</h2>
-            </section>
+                <section id="cv-skills">
+                    <h2>Skills</h2>
+                </section>
 
-            <section id="cv-interests">
-                <h2>Interests</h2>
-            </section>
+                <section id="cv-interests">
+                    <h2>Interests</h2>
+                </section>
+            </div>
         </div>
 
         <script src="/public/site.js"></script>
         <script>
             loadData().then((data) => {
+                // Contact
+                const c = data.contact;
+                const links = [];
+                if (c.github) links.push(`<a href="${c.github}"><i class="nf nf-md-github"></i>${c.github.replace("https://", "")}</a>`);
+                if (c.linkedin) links.push(`<a href="${c.linkedin}"><i class="nf nf-md-linkedin"></i>${c.linkedin.replace("https://www.", "")}</a>`);
+                document.querySelector("#cv-contact").innerHTML = links.join("");
+
                 const workHtml = data.work
                     .slice(0, 3)
                     .map(
@@ -162,7 +250,7 @@
                     .map(
                         (edu) => `
                     <h3>${edu.qualification} - ${edu.institution}</h3>
-                    <p class="meta">${edu.start} - ${edu.end}</p>
+                    <p class="meta">${edu.start} - ${edu.end}${edu.major ? " :: " + edu.major : ""}${edu.award ? " :: " + edu.award : ""}</p>
                     <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>`,
                     )
                     .join("");
