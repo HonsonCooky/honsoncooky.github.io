@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CV - Harrison Cook</title>
+        <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+        <link rel="stylesheet" href="/public/style.css" />
+        <style>
+            @font-face {
+                font-family: "Adwaita Sans";
+                src: url("/public/fonts/AdwaitaSans-Regular.ttf") format("truetype");
+                font-weight: 100 900;
+                font-style: normal;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 1.5cm;
+            }
+
+            .cv-page {
+                font-family: "Adwaita Sans", sans-serif;
+                font-size: 10pt;
+                line-height: 1.4;
+                color: #1a1a1a;
+                background: #fff;
+                width: 210mm;
+                min-height: 297mm;
+                max-height: 297mm;
+                overflow: visible;
+                padding: 1.5cm;
+                margin: 1.5rem auto;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .cv-page h1 {
+                font-size: 18pt;
+                color: #1a1a1a;
+                margin-bottom: 0.2em;
+            }
+
+            .cv-page h2 {
+                font-size: 12pt;
+                color: #1a1a1a;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 0.2em;
+                margin: 0.8em 0 0.4em 0;
+            }
+
+            .cv-page h3 {
+                font-size: 10pt;
+                margin: 0.4em 0 0.1em 0;
+            }
+
+            .cv-page .meta {
+                font-size: 9pt;
+                color: #555;
+                margin: 0 0 0.2em 0;
+            }
+
+            .cv-page ul {
+                padding-left: 1.5em;
+                margin: 0.2em 0;
+            }
+
+            .cv-page li {
+                margin-bottom: 0.1em;
+            }
+
+            .cv-page .skills {
+                font-size: 9pt;
+                color: #555;
+                margin: 0.2em 0;
+            }
+
+            .cv-page .summary {
+                margin: 0.3em 0 0.5em 0;
+            }
+
+            .cv-hint {
+                color: var(--fg-muted);
+                font-size: 0.9em;
+                margin-bottom: 1rem;
+            }
+
+            @media print {
+                body {
+                    background: none;
+                    padding: 0;
+                    margin: 0;
+                    max-width: none;
+                }
+
+                nav, .cv-hint {
+                    display: none;
+                }
+
+                .cv-page {
+                    border: none;
+                    box-shadow: none;
+                    margin: 0;
+                    padding: 0;
+                    width: auto;
+                    min-height: auto;
+                    max-height: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="/">home</a>
+            <a href="/history.html">history</a>
+            <a href="/blogs/">blogs</a>
+            <a href="/cv.html" aria-current="page">cv</a>
+        </nav>
+
+        <p class="cv-hint">Ctrl+P to save as PDF</p>
+
+        <div class="cv-page">
+            <h1>Harrison Cook</h1>
+            <p class="summary">
+                Software engineer with a focus on backend systems and a preference for understanding things from the
+                ground up. Experience across Go, C#, and TypeScript in production environments. BE(Hons) in Software
+                Engineering.
+            </p>
+
+            <section id="cv-work">
+                <h2>Work</h2>
+            </section>
+
+            <section id="cv-education">
+                <h2>Education</h2>
+            </section>
+
+            <section id="cv-skills">
+                <h2>Skills</h2>
+            </section>
+
+            <section id="cv-interests">
+                <h2>Interests</h2>
+            </section>
+        </div>
+
+        <script src="/public/site.js"></script>
+        <script>
+            loadData().then((data) => {
+                const workHtml = data.work
+                    .slice(0, 3)
+                    .map(
+                        (job) => `
+                    <h3>${job.role} - ${job.company}</h3>
+                    <p class="meta">${job.start} - ${job.end || "Present"} :: ${job.location}</p>
+                    <ul>${job.details.slice(0, 2).map((d) => `<li>${d}</li>`).join("")}</ul>`,
+                    )
+                    .join("");
+                document.querySelector("#cv-work").innerHTML += workHtml;
+
+                const eduHtml = data.education
+                    .map(
+                        (edu) => `
+                    <h3>${edu.qualification} - ${edu.institution}</h3>
+                    <p class="meta">${edu.start} - ${edu.end}</p>
+                    <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>`,
+                    )
+                    .join("");
+                document.querySelector("#cv-education").innerHTML += eduHtml;
+
+                const skills = collectSkills(data);
+                document.querySelector("#cv-skills").innerHTML += `<p>${skills.join(" | ")}</p>`;
+
+                const intHtml = data.interests
+                    .map((i) => `<p><strong>${i.name}</strong> - ${i.summary}</p>`)
+                    .join("");
+                document.querySelector("#cv-interests").innerHTML += intHtml;
+            });
+        </script>
+    </body>
+</html>

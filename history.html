@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>History - Harrison Cook</title>
+        <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+        <link rel="stylesheet" href="/public/style.css" />
+    </head>
+    <body>
+        <nav>
+            <a href="/">home</a>
+            <a href="/history.html" aria-current="page">history</a>
+            <a href="/blogs/">blogs</a>
+            <a href="/cv.html">cv</a>
+        </nav>
+
+        <h1>History</h1>
+
+        <section id="work">
+            <h2>Work</h2>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+        </section>
+
+        <section id="interests">
+            <h2>Interests</h2>
+        </section>
+
+        <script src="/public/site.js"></script>
+        <script>
+            loadData().then((data) => {
+                document.querySelector("#work").innerHTML += renderWork(data.work);
+                document.querySelector("#education").innerHTML += renderEducation(data.education);
+                document.querySelector("#interests").innerHTML += renderInterests(data.interests);
+            });
+        </script>
+    </body>
+</html>

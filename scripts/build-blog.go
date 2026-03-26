@@ -21,7 +21,7 @@ func main() {
 	wd, _ := os.Getwd()
 	root, _ := filepath.Abs(wd)
 	contentDir := filepath.Join(root, "content", "blog")
-	outputDir := filepath.Join(root, "blog")
+	outputDir := filepath.Join(root, "blogs")
 
 	entries, err := os.ReadDir(contentDir)
 	if err != nil {
@@ -31,7 +31,7 @@ func main() {
 
 	var files []string
 	for _, e := range entries {
-		if !e.IsDir() && strings.HasSuffix(e.Name(), ".md") {
+		if !e.IsDir() && strings.HasSuffix(e.Name(), ".md") && !strings.Contains(e.Name(), "draft") {
 			files = append(files, e.Name())
 		}
 	}
@@ -66,14 +66,13 @@ func main() {
 			html:    html,
 		}
 
-		outDir := filepath.Join(outputDir, slug)
-		os.MkdirAll(outDir, 0o755)
-		err = os.WriteFile(filepath.Join(outDir, "index.html"), []byte(postTemplate(p)), 0o644)
+		os.MkdirAll(outputDir, 0o755)
+		err = os.WriteFile(filepath.Join(outputDir, slug+".html"), []byte(postTemplate(p)), 0o644)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error writing %s: %v\n", slug, err)
 			os.Exit(1)
 		}
-		fmt.Printf("  built: blog/%s/index.html\n", slug)
+		fmt.Printf("  built: blogs/%s.html\n", slug)
 		posts = append(posts, p)
 	}
 
@@ -83,7 +82,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "error writing listing: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("  built: blog/index.html (%d post%s)\n", len(posts), plural(len(posts)))
+	fmt.Printf("  built: blogs/index.html (%d post%s)\n", len(posts), plural(len(posts)))
 }
 
 func parseFrontmatter(raw string) (map[string]string, string) {
@@ -206,7 +205,7 @@ func markdownToHTML(md string) string {
 
 // inlineFormat handles inline markdown: bold, italic, inline code, and links.
 func inlineFormat(s string) string {
-	// Inline code (backticks) -- process first to avoid formatting inside code spans
+	// Inline code (backticks) - process first to avoid formatting inside code spans
 	re := regexp.MustCompile("`([^`]+)`")
 	s = re.ReplaceAllString(s, "<code>$1</code>")
 
@@ -239,19 +238,22 @@ func postTemplate(p post) string {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>%s - Harrison Cook</title>
+        <link rel="icon" type="image/png" href="/public/images/favicon.png" />
         <link rel="stylesheet" href="/public/style.css" />
-        <script src="/public/components.js" defer></script>
     </head>
     <body>
-        <site-header page="blog"></site-header>
+        <nav>
+            <a href="/">home</a>
+            <a href="/history.html">history</a>
+            <a href="/blogs/" aria-current="page">blogs</a>
+            <a href="/cv.html">cv</a>
+        </nav>
 
-        <main class="post">
-            <h1>%s</h1>
-            <p class="post-meta">%s</p>
-            %s
-        </main>
+        <h1>%s</h1>
+        <p class="post-meta">%s</p>
+        %s
 
-        <site-footer></site-footer>
+        <p><a href="/blogs/">back</a></p>
     </body>
 </html>
 `, p.title, p.title, p.date, p.html)
@@ -261,8 +263,8 @@ func listingTemplate(posts []post) string {
 	var items strings.Builder
 	for _, p := range posts {
 		items.WriteString(fmt.Sprintf(`            <li>
-                <a href="/blog/%s/">%s</a>
-                <small>%s -- %s</small>
+                <a href="/blogs/%s.html">%s</a>
+                <small>%s - %s</small>
             </li>
 `, p.slug, p.title, p.date, p.summary))
 	}
@@ -272,20 +274,21 @@ func listingTemplate(posts []post) string {
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Blog - Harrison Cook</title>
+        <title>Blogs - Harrison Cook</title>
+        <link rel="icon" type="image/png" href="/public/images/favicon.png" />
         <link rel="stylesheet" href="/public/style.css" />
-        <script src="/public/components.js" defer></script>
     </head>
     <body>
-        <site-header page="blog"></site-header>
+        <nav>
+            <a href="/">home</a>
+            <a href="/history.html">history</a>
+            <a href="/blogs/" aria-current="page">blogs</a>
+            <a href="/cv.html">cv</a>
+        </nav>
 
-        <main>
-            <h1>Blog</h1>
-            <ul class="post-list">
-%s            </ul>
-        </main>
-
-        <site-footer></site-footer>
+        <h1>Blogs</h1>
+        <ul class="post-list">
+%s        </ul>
     </body>
 </html>
 `, items.String())

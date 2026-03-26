@@ -1,0 +1,102 @@
+{
+    "work": [
+        {
+            "company": "Splitting Point Studios",
+            "role": "Software Engineer",
+            "start": "Sept 2025",
+            "end": null,
+            "location": "Remote, NZ",
+            "details": [
+                "Leading the backend effort, building Go services on Railway - focused on keeping things simple, scalable, and manageable by a small team.",
+                "Informally managing a growing team; driving technical direction for backend systems.",
+                "Built AWS infrastructure for social gaming services across Splitting Point's Roblox titles.",
+                "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
+            ],
+            "skills": ["Go", "AWS", "Railway", "Luau", "Roblox Studio"]
+        },
+        {
+            "company": "Xero",
+            "role": "Software Engineer",
+            "start": "Aug 2024",
+            "end": "Sept 2025",
+            "location": "Wellington, NZ",
+            "details": [
+                "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
+                "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
+                "On-call for production incidents across systems outside my squad's scope."
+            ],
+            "skills": ["C#", ".NET", "IIS", "Azure"]
+        },
+        {
+            "company": "Z Energy",
+            "role": "Software Engineer",
+            "start": "Nov 2021",
+            "end": "Aug 2024",
+            "location": "Wellington, NZ",
+            "details": [
+                "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
+                "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets.",
+                "Grew significantly as an engineer here; the scale and process forced me to understand what kind of developer I wanted to be."
+            ],
+            "skills": ["TypeScript", "Node.js", "AWS", "Postgres", "DynamoDB", "Terraform", "GitHub Actions", "Git"]
+        },
+        {
+            "company": "Raygun",
+            "role": "Software Engineer Intern",
+            "start": "Nov 2020",
+            "end": "Feb 2021",
+            "location": "Wellington, NZ",
+            "details": [
+                "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring.",
+                "First industry role."
+            ],
+            "skills": ["React Native", "JavaScript"],
+            "link": "https://www.npmjs.com/package/raygun4reactnative"
+        }
+    ],
+    "education": [
+        {
+            "institution": "Victoria University of Wellington",
+            "qualification": "BE(Hons), Software Engineering",
+            "start": "2018",
+            "end": "2021",
+            "details": [
+                "First Class Honours",
+                "Specialisation: Networked Applications",
+                "Dean's List for Academic Excellence (2018, 2019, 2020, 2021)"
+            ],
+            "transcript": "/public/documents/transcript_vic_harrison_cook.pdf"
+        },
+        {
+            "institution": "Marlborough Boys' College",
+            "qualification": "NCEA",
+            "start": "2013",
+            "end": "2017",
+            "details": [
+                "Level 1 with Excellence Endorsement",
+                "Level 2 with Excellence Endorsement",
+                "Level 3 with Excellence Endorsement"
+            ],
+            "transcript": "/public/documents/transcript_mbc_harrison_cook.pdf"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Linux",
+            "summary": "Daily driver. Shell scripting, dotfiles, system administration."
+        },
+        {
+            "name": "Ergonomic Keyboards",
+            "summary": "ZSA Voyager with custom firmware. QMK and ZMK."
+        },
+        {
+            "name": "PC Building",
+            "summary": "Building and maintaining machines. Dual-boot Linux and Windows."
+        },
+        {
+            "name": "Retro Gaming",
+            "summary": "Handhelds, emulation, tinkering with old hardware."
+        }
+    ],
+    "references": []
+}
