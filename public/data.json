@@ -8,7 +8,7 @@
             "location": "Remote, NZ",
             "details": [
                 "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
-                "> Everything I learned about what breaks at scale, I get to apply here. That feels like the whole point.",
+                "> Years of watching, learning, and forming opinions about how things should be built - and now I get to put that into practice. Building something from the ground up, and laying the tracks myself, is incredibly rewarding.",
                 "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
                 "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
             ],
@@ -22,7 +22,7 @@
             "location": "Wellington, NZ",
             "details": [
                 "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
-                "> I came here deliberately - to work where the code is the product. This is where I figured out the kind of engineer I want to be.",
+                "> Working somewhere the software is the product was a deliberate move. The scale of it all gave me a much deeper appreciation for what it takes to keep something that big running, and it shaped how I think about building software.",
                 "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
                 "On-call for production incidents across systems outside my squad's scope."
             ],
@@ -36,7 +36,7 @@
             "location": "Wellington, NZ",
             "details": [
                 "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
-                "> First time in a corporate environment. The code was never the product here; it was a means to an end. Learning to think in business outcomes instead of academic ideals changed how I approach everything.",
+                "> Going from university into corporate was a reality check. The code was never the point here; the business was. Learning to build for outcomes instead of for the sake of building changed how I think about everything.",
                 "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
             ],
             "skills": ["TypeScript", "Azure", "DevOps"]
@@ -49,7 +49,7 @@
             "location": "Wellington, NZ",
             "details": [
                 "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring.",
-                "> My first taste of building something real. Writing code that other developers would actually use - that was new, and I was hooked."
+                "> Building a tool that other developers would actually use - that was my first taste of real engineering. Watching experienced teams turn problems into shipping features had a rhythm to it that I found completely addictive."
             ],
             "skills": ["React Native", "JavaScript"],
             "link": "https://www.npmjs.com/package/raygun4reactnative"
