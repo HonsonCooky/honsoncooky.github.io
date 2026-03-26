@@ -91,11 +91,15 @@
         {
             "name": "Retro Gaming",
             "summary": "Upgrading old handhelds and getting into the retro community."
+        },
+        {
+            "name": "PC Building",
+            "summary": "Building and maintaining machines. Pure Linux gamer."
         }
     ],
     "contact": {
         "github": "https://github.com/HonsonCooky",
-        "linkedin": "https://www.linkedin.com/in/harrisoncook"
+        "linkedin": "https://www.linkedin.com/in/honsoncooky"
     },
     "references": []
 }

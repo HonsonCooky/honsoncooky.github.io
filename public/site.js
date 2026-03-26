@@ -43,9 +43,9 @@ function renderEducation(education) {
         <article>
             <h3>${edu.qualification}</h3>
             <p class="meta">${edu.start} - ${edu.end} :: ${edu.institution}</p>
-            ${edu.major ? `<p>Major: ${edu.major}</p>` : ""}
-            ${edu.specialisation ? `<p>Specialisation: ${edu.specialisation}</p>` : ""}
-            ${edu.award ? `<p>Award: ${edu.award}</p>` : ""}
+            ${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}
+            ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
+            ${edu.award ? `<div><span class="label">Award:</span> ${edu.award}</div>` : ""}
             <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>
         </article>`,
         )

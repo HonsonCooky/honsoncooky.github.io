@@ -46,9 +46,11 @@
     --fg: #bfbdb6;
     --fg-muted: #636a72;
     --accent: #e6b450;
-    --border: #11151c;
+    --border: #2b3039;
     --string: #aad94c;
     --link: #39bae6;
+    --accent2: #d2a6ff;
+    --accent3: #ff8f40;
 }
 
 /* Ayu Light */
@@ -62,6 +64,8 @@
         --border: #d8d8d7;
         --string: #86b300;
         --link: #399ee6;
+        --accent2: #a37acc;
+        --accent3: #ed9366;
     }
 }
 
@@ -78,7 +82,7 @@ body {
     margin: 0 auto;
     padding: 2rem 1.5rem;
     max-width: 65ch;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 a {
@@ -129,18 +133,20 @@ pre code {
 h1 {
     color: var(--accent);
     font-size: 2rem;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1.5em 0;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     margin: 0;
+    line-height: 1;
 }
 
 .hero h2 {
     color: var(--fg-muted);
     font-size: 1.4rem;
     margin: 0;
+    line-height: 1;
 }
 
 @media (max-width: 480px) {
@@ -155,17 +161,40 @@ h1 {
     }
 }
 
+body > section {
+    margin-bottom: 3em;
+}
+
+body > section:last-child {
+    margin-bottom: 0;
+}
+
 h2 {
-    color: var(--accent);
-    margin: 1.5rem 0 0.5rem 0;
+    color: var(--accent3);
+    margin: 0;
 }
 
 h3 {
-    margin: 0.8rem 0 0.2rem 0;
+    margin: 0.3em 0 0 0;
+}
+
+h4 {
+    color: var(--accent2);
+    font-size: 1em;
+    margin: 0.25em 0 0.1em 0;
+}
+
+.label {
+    color: var(--accent2);
+    font-weight: bold;
+}
+
+div:has(> .label) {
+    margin-bottom: 0.15em;
 }
 
 p {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75em 0;
 }
 
 small {
@@ -175,12 +204,16 @@ small {
 hr {
     border: none;
     border-top: 1px solid var(--border);
-    margin: 1rem 0;
+    margin: 0.5em 0 1em 0;
 }
 
 ul {
     padding-left: 1.5em;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.25em 0;
+}
+
+li {
+    margin-bottom: 0.15em;
 }
 
 nav {
@@ -202,6 +235,7 @@ nav a[aria-current="page"] {
     font-size: 0.9em;
     margin: 0 0 0.3rem 0;
 }
+
 
 .skills {
     color: var(--fg-muted);

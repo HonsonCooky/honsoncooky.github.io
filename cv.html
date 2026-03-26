@@ -11,7 +11,7 @@
         <style>
             @page {
                 size: A4 portrait;
-                margin: 1.5cm;
+                margin: 0;
             }
 
             .cv-page {
@@ -40,7 +40,7 @@
             }
 
             .cv-page .cv-body section {
-                padding-bottom: 1.5em;
+                padding-bottom: 1em;
             }
 
             .cv-page .cv-body section:last-child {
@@ -70,15 +70,15 @@
             }
 
             .cv-page h2 {
-                font-size: 12pt;
+                font-size: 13pt;
                 color: var(--accent);
                 border-bottom: 1px solid var(--border);
-                padding-bottom: 0.2em;
-                margin: 0 0 0.4em 0;
+                padding-bottom: 0.15em;
+                margin: 0 0 0.5em 0;
             }
 
             .cv-page h3 {
-                font-size: 10pt;
+                font-size: 11pt;
                 margin: 0.8em 0 0.1em 0;
             }
 
@@ -106,7 +106,7 @@
             .cv-contact {
                 font-size: 9pt;
                 color: var(--fg-muted);
-                margin: 0.5em 0 2em 0;
+                margin: 0.2em 0;
                 display: flex;
                 justify-content: flex-start;
                 gap: 2em;
@@ -126,8 +126,7 @@
             }
 
             .cv-page .summary {
-                margin: 0.3em 0 0;
-                padding-bottom: 1.5em;
+                margin: 1em 0;
             }
 
             .cv-hint {
@@ -155,34 +154,25 @@
                     border: none;
                     box-shadow: none;
                     margin: 0;
-                    padding: 0;
                     width: auto;
-                    min-height: auto;
-                    max-height: auto;
                 }
 
+                .cv-page,
                 .cv-page h1,
-                .cv-page h2 {
+                .cv-page h2,
+                .cv-page h3,
+                .cv-page .meta,
+                .cv-page .skills,
+                .cv-page .label,
+                .cv-role,
+                .cv-divider,
+                .cv-contact,
+                .cv-contact a {
                     color: #1a1a1a;
                 }
 
                 .cv-page h2 {
                     border-bottom-color: #ccc;
-                }
-
-                .cv-role,
-                .cv-divider {
-                    color: #555;
-                }
-
-                .cv-contact,
-                .cv-contact a {
-                    color: #555;
-                }
-
-                .cv-page .meta,
-                .cv-page .skills {
-                    color: #555;
                 }
             }
         </style>
@@ -201,8 +191,8 @@
             <p class="cv-contact" id="cv-contact"></p>
             <p class="summary">
                 Born into a family addicted to music and theatre, I spent years on stage before calculus and physics
-                pulled me in a different direction. The result is a bit of a wild mix - a socialite nerd with a thing
-                for computers. I've built production systems in Go, C#, and TypeScript, and outside of work I chase
+                pulled me in a different direction. The result is a bit of a wild mix - a socialite nerd, engulfed by
+                computers. I've built production systems in Go, C#, and TypeScript, and outside of work I chase
                 low level programming in C - as close to the bits as possible.
             </p>
 
@@ -259,8 +249,8 @@
                 const skills = collectSkills(data);
                 document.querySelector("#cv-skills").innerHTML += `<p>${skills.join(" | ")}</p>`;
 
-                const intHtml = data.interests
-                    .map((i) => `<p><strong>${i.name}</strong> - ${i.summary}</p>`)
+                const intHtml = data.interests.slice(0, 3)
+                    .map((i) => `<div><span class="label">${i.name}:</span> ${i.summary}</div>`)
                     .join("");
                 document.querySelector("#cv-interests").innerHTML += intHtml;
             });
