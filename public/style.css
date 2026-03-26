@@ -80,8 +80,8 @@ body {
     background: var(--bg);
     color: var(--fg);
     margin: 0 auto;
-    padding: 2rem 1.5rem;
-    max-width: 65ch;
+    padding: 2rem 1.5cm;
+    max-width: 240mm;
     line-height: 1.75;
 }
 
