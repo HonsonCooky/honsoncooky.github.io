@@ -230,6 +230,14 @@ nav a[aria-current="page"] {
     color: var(--link);
 }
 
+blockquote {
+    font-style: italic;
+    color: var(--fg-muted);
+    border-left: 2px solid var(--accent2);
+    padding-left: 1em;
+    margin: 0.5em 0;
+}
+
 .meta {
     color: var(--fg-muted);
     font-size: 0.9em;

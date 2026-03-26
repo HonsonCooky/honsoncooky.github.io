@@ -8,11 +8,11 @@
             "location": "Remote, NZ",
             "details": [
                 "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
-                "Driving technical direction for backend systems.",
+                "> Everything I learned about what breaks at scale, I get to apply here. That feels like the whole point.",
                 "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
                 "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
             ],
-            "skills": ["Go", "Railway", "Luau", "Roblox Studio", "AWS", "DevOps", "Claude"]
+            "skills": ["Go", "Railway", "Lua", "Roblox Studio", "AWS", "DevOps", "Claude"]
         },
         {
             "company": "Xero",
@@ -22,6 +22,7 @@
             "location": "Wellington, NZ",
             "details": [
                 "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
+                "> I came here deliberately - to work where the code is the product. This is where I figured out the kind of engineer I want to be.",
                 "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
                 "On-call for production incidents across systems outside my squad's scope."
             ],
@@ -35,8 +36,8 @@
             "location": "Wellington, NZ",
             "details": [
                 "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
-                "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets.",
-                "Grew significantly as an engineer here; the scale and process forced me to understand what kind of developer I wanted to be."
+                "> First time in a corporate environment. The code was never the product here; it was a means to an end. Learning to think in business outcomes instead of academic ideals changed how I approach everything.",
+                "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
             ],
             "skills": ["TypeScript", "Azure", "DevOps"]
         },
@@ -48,7 +49,7 @@
             "location": "Wellington, NZ",
             "details": [
                 "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring.",
-                "First industry role."
+                "> My first taste of building something real. Writing code that other developers would actually use - that was new, and I was hooked."
             ],
             "skills": ["React Native", "JavaScript"],
             "link": "https://www.npmjs.com/package/raygun4reactnative"
@@ -98,7 +99,7 @@
         }
     ],
     "skillCategories": {
-        "Lang": ["Go", "Luau", "C#", "TypeScript", "JavaScript"],
+        "Lang": ["Go", "Lua", "C#", "TypeScript", "JavaScript"],
         "Frameworks": ["React Native"],
         "Infra": ["AWS", "Railway", "IIS", "Azure"],
         "Other": ["Claude", "Roblox Studio"]

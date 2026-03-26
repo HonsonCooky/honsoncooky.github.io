@@ -197,9 +197,9 @@
             <p class="cv-contact" id="cv-contact"></p>
             <p class="summary">
                 Born into a family addicted to music and theatre, I spent years on stage before calculus and physics
-                pulled me in a different direction. The result is a bit of a wild mix - a socialite nerd, engulfed by
-                computers. I've built production systems in Go, C#, and TypeScript, and outside of work I chase
-                low level programming in C - as close to the bits as possible.
+                pulled me in a different direction. The result is a wild mix of showman and nerd, engulfed by
+                computers, and having a blast. I've built production systems in Go, C#, and TypeScript. Outside of
+                work, my mind wanders to game development in C - building worlds from nothing but instructions.
             </p>
 
             <div class="cv-body">
@@ -237,7 +237,7 @@
                         (job) => `
                     <h3>${job.role} - ${job.company}</h3>
                     <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
-                    <ul>${job.details.slice(0, 2).map((d) => `<li>${d}</li>`).join("")}</ul>`,
+                    <ul>${job.details.slice(0, 2).map((d) => d.startsWith("> ") ? `<li>"${d.slice(2)}"</li>` : `<li>${d}</li>`).join("")}</ul>`,
                     )
                     .join("");
                 document.querySelector("#cv-work").innerHTML += workHtml;
