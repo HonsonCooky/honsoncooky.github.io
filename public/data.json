@@ -12,7 +12,7 @@
                 "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
                 "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
             ],
-            "skills": ["Go", "Railway", "Luau", "Roblox Studio", "AWS", "DevOps"]
+            "skills": ["Go", "Railway", "Luau", "Roblox Studio", "AWS", "DevOps", "Claude"]
         },
         {
             "company": "Xero",
@@ -97,6 +97,12 @@
             "summary": "Building and maintaining machines. Pure Linux gamer."
         }
     ],
+    "skillCategories": {
+        "Lang": ["Go", "Luau", "C#", "TypeScript", "JavaScript"],
+        "Frameworks": ["React Native"],
+        "Infra": ["AWS", "Railway", "IIS", "Azure"],
+        "Other": ["Claude", "Roblox Studio"]
+    },
     "contact": {
         "github": "https://github.com/HonsonCooky",
         "linkedin": "https://www.linkedin.com/in/honsoncooky"

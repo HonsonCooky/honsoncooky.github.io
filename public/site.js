@@ -1,3 +1,5 @@
+const SEP = " :: ";
+
 const NAV_LINKS = [
     { href: "/", label: "home" },
     { href: "/history.html", label: "history" },
@@ -28,9 +30,9 @@ function renderWork(work) {
             (job) => `
         <article>
             <h3>${job.role} - ${job.company}</h3>
-            <p class="meta">${job.start} - ${job.end || "Present"} :: ${job.location}</p>
+            <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
             <ul>${job.details.map((d) => `<li>${d}</li>`).join("")}</ul>
-            <p class="skills">${job.skills.join(" :: ")}</p>
+            <p class="skills">${job.skills.join(SEP)}</p>
         </article>`,
         )
         .join("<hr />");
@@ -42,7 +44,7 @@ function renderEducation(education) {
             (edu) => `
         <article>
             <h3>${edu.qualification}</h3>
-            <p class="meta">${edu.start} - ${edu.end} :: ${edu.institution}</p>
+            <p class="meta">${edu.start} - ${edu.end}${SEP}${edu.institution}</p>
             ${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}
             ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
             ${edu.award ? `<div><span class="label">Award:</span> ${edu.award}</div>` : ""}

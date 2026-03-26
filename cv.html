@@ -103,6 +103,12 @@
                 margin: 0.2em 0;
             }
 
+            .cv-skills-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.2em 2em;
+            }
+
             .cv-contact {
                 font-size: 9pt;
                 color: var(--fg-muted);
@@ -185,7 +191,7 @@
         <div class="cv-page">
             <div class="cv-header">
                 <h1>Harrison Cook</h1>
-                <span class="cv-divider">|</span>
+                <span class="cv-divider">::</span>
                 <span class="cv-role">Software Engineer</span>
             </div>
             <p class="cv-contact" id="cv-contact"></p>
@@ -230,7 +236,7 @@
                     .map(
                         (job) => `
                     <h3>${job.role} - ${job.company}</h3>
-                    <p class="meta">${job.start} - ${job.end || "Present"} :: ${job.location}</p>
+                    <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
                     <ul>${job.details.slice(0, 2).map((d) => `<li>${d}</li>`).join("")}</ul>`,
                     )
                     .join("");
@@ -240,14 +246,16 @@
                     .map(
                         (edu) => `
                     <h3>${edu.qualification} - ${edu.institution}</h3>
-                    <p class="meta">${edu.start} - ${edu.end}${edu.major ? " :: " + edu.major : ""}${edu.award ? " :: " + edu.award : ""}</p>
+                    <p class="meta">${edu.start} - ${edu.end}${edu.major ? SEP + edu.major : ""}${edu.award ? SEP + edu.award : ""}</p>
                     <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>`,
                     )
                     .join("");
                 document.querySelector("#cv-education").innerHTML += eduHtml;
 
-                const skills = collectSkills(data);
-                document.querySelector("#cv-skills").innerHTML += `<p>${skills.join(" | ")}</p>`;
+                const skillsHtml = `<div class="cv-skills-grid">${Object.entries(data.skillCategories)
+                    .map(([cat, skills]) => `<div><span class="label">${cat}:</span> ${skills.join(SEP)}</div>`)
+                    .join("")}</div>`;
+                document.querySelector("#cv-skills").innerHTML += skillsHtml;
 
                 const intHtml = data.interests.slice(0, 3)
                     .map((i) => `<div><span class="label">${i.name}:</span> ${i.summary}</div>`)
