@@ -31,7 +31,8 @@ function renderWork(work) {
         <article>
             <h3>${job.role} - ${job.company}</h3>
             <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
-            <ul>${job.details.map((d) => d.startsWith("> ") ? `<li><pre><code>"${d.slice(2)}"</code></pre></li>` : `<li>${d}</li>`).join("")}</ul>
+            ${job.reflection ? `<blockquote>"${job.reflection}"</blockquote>` : ""}
+            <ul>${job.details.map((d) => `<li>${d}</li>`).join("")}</ul>
             <p class="skills">${job.skills.join(SEP)}</p>
         </article>`,
         )

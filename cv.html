@@ -237,7 +237,7 @@
                         (job) => `
                     <h3>${job.role} - ${job.company}</h3>
                     <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
-                    <ul>${job.details.slice(0, 2).map((d) => d.startsWith("> ") ? `<li>"${d.slice(2)}"</li>` : `<li>${d}</li>`).join("")}</ul>`,
+                    <ul>${job.details.slice(0, 2).map((d) => `<li>${d}</li>`).join("")}</ul>`,
                     )
                     .join("");
                 document.querySelector("#cv-work").innerHTML += workHtml;

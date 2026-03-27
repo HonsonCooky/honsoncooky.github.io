@@ -80,8 +80,8 @@ body {
     background: var(--bg);
     color: var(--fg);
     margin: 0 auto;
-    padding: 2rem 1.5cm;
-    max-width: 240mm;
+    padding: 2rem 1rem;
+    max-width: calc(210mm + 2rem);
     line-height: 1.75;
 }
 
@@ -231,6 +231,14 @@ nav a[aria-current="page"] {
     color: var(--link);
 }
 
+
+blockquote {
+    font-style: italic;
+    color: var(--fg-muted);
+    border-left: 2px solid var(--accent2);
+    padding-left: 0.75em;
+    margin: 0.25em 0;
+}
 
 .meta {
     color: var(--fg-muted);

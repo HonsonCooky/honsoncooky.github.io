@@ -6,9 +6,9 @@
             "start": "Sept 2025",
             "end": null,
             "location": "Remote, NZ",
+            "reflection": "Taking on a leadership role gave me the space to put years of observation into practice. Figuring out how to build a scalable architecture from scratch has been a satisfying challenge, and it feels incredibly rewarding to be laying the tracks myself.",
             "details": [
                 "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
-                "> Years of watching, learning, and forming opinions about how things should be built - and now I get to put that into practice. Building something from the ground up, and laying the tracks myself, is incredibly rewarding.",
                 "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
                 "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
             ],
@@ -20,9 +20,9 @@
             "start": "Aug 2024",
             "end": "Sept 2025",
             "location": "Wellington, NZ",
+            "reflection": "Operating in a space where the software itself is the core product shifted my perspective on engineering. Getting to navigate the sheer scale of those systems slowly deepened my understanding of what it takes to keep a massive platform running smoothly.",
             "details": [
                 "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
-                "> Working somewhere the software is the product was a deliberate move. The scale of it all gave me a much deeper appreciation for what it takes to keep something that big running, and it shaped how I think about building software.",
                 "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
                 "On-call for production incidents across systems outside my squad's scope."
             ],
@@ -34,9 +34,9 @@
             "start": "Nov 2021",
             "end": "Aug 2024",
             "location": "Wellington, NZ",
+            "reflection": "Transitioning from university into a large corporate environment taught me how to align technical work with actual business needs. Learning to view code as a mechanism for delivering value, rather than just an academic exercise, fundamentally changed the way I evaluate solutions.",
             "details": [
                 "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
-                "> Going from university into corporate was a reality check. The code was never the point here; the business was. Learning to build for outcomes instead of for the sake of building changed how I think about everything.",
                 "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
             ],
             "skills": ["TypeScript", "Azure", "DevOps"]
@@ -47,9 +47,9 @@
             "start": "Nov 2020",
             "end": "Feb 2021",
             "location": "Wellington, NZ",
+            "reflection": "Building a tool that was going to be used by other developers gave me my first taste of real-world engineering. Watching experienced teams turn complex problems into shipping features showed me a rhythm to the work that I found completely addictive.",
             "details": [
-                "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring.",
-                "> Building a tool that other developers would actually use - that was my first taste of real engineering. Watching experienced teams turn problems into shipping features had a rhythm to it that I found completely addictive."
+                "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring."
             ],
             "skills": ["React Native", "JavaScript"],
             "link": "https://www.npmjs.com/package/raygun4reactnative"
