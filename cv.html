@@ -262,10 +262,17 @@
 
                 const eduHtml = data.education
                     .map(
-                        (edu) => `
-                    <h3>${edu.qualification} - ${edu.institution}</h3>
-                    <p class="meta">${edu.start} - ${edu.end}${edu.major ? SEP + edu.major : ""}${edu.award ? SEP + edu.award : ""}</p>
-                    <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>`,
+                        (edu, i) => {
+                            const extras = [];
+                            if (edu.major) extras.push(`Major: ${edu.major}`);
+                            if (edu.specialisation) extras.push(`Specialisation: ${edu.specialisation}`);
+                            const all = [...extras, ...edu.details];
+                            const limit = i === 0 ? 3 : 1;
+                            return `
+                    <h3>${edu.qualification}</h3>
+                    <p class="meta">${edu.start} - ${edu.end}${SEP}${edu.institution}</p>
+                    <ul>${all.slice(0, limit).map((d) => `<li>${d}</li>`).join("")}</ul>`;
+                        },
                     )
                     .join("");
                 document.querySelector("#cv-education").innerHTML += eduHtml;
