@@ -236,6 +236,15 @@ nav a[aria-current="page"] {
     white-space: nowrap;
 }
 
+details summary {
+    cursor: pointer;
+    color: var(--fg-muted);
+}
+
+details summary:hover {
+    color: var(--link);
+}
+
 blockquote {
     font-style: italic;
     color: var(--fg-muted);

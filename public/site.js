@@ -50,6 +50,7 @@ function renderEducation(education) {
             ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
             ${edu.award ? `<div><span class="label">Award:</span> ${edu.award}</div>` : ""}
             <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>
+            ${edu.theatre ? `<details><summary>Theatre Awards and Participation</summary><p><em>And you thought I was joking about being musically involved.</em></p><ul>${edu.theatre.map((t) => `<li>${t}</li>`).join("")}</ul></details>` : ""}
         </article>`,
         )
         .join("<hr />");

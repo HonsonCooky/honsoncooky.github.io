@@ -1,109 +1,123 @@
 {
-    "work": [
-        {
-            "company": "Splitting Point Studios",
-            "role": "Lead Software Engineer",
-            "start": "Sept 2025",
-            "end": null,
-            "location": "Remote, NZ",
-            "reflection": "Taking on a leadership role is giving me the space to put years of observation into practice. Figuring out how to build a scalable architecture from scratch is a satisfying challenge, and it feels incredibly rewarding to be laying the tracks myself.",
-            "details": [
-                "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
-                "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
-                "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
-            ],
-            "skills": ["Go", "Railway", "Lua", "Roblox Studio", "AWS", "DevOps", "Claude"]
-        },
-        {
-            "company": "Xero",
-            "role": "Software Engineer",
-            "start": "Aug 2024",
-            "end": "Sept 2025",
-            "location": "Wellington, NZ",
-            "reflection": "Operating in a space where the software itself is the core product shifted my perspective on engineering. Getting to navigate the sheer scale of those systems slowly deepened my understanding of what it takes to keep a massive platform running smoothly.",
-            "details": [
-                "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
-                "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
-                "On-call for production incidents across systems outside my squad's scope."
-            ],
-            "skills": ["C#", "IIS", "AWS", "DevOps"]
-        },
-        {
-            "company": "Z Energy",
-            "role": "Software Engineer",
-            "start": "Nov 2021",
-            "end": "Aug 2024",
-            "location": "Wellington, NZ",
-            "reflection": "Transitioning from university into a large corporate environment taught me how to align technical work with actual business needs. Learning to view code as a mechanism for delivering value, rather than just an academic exercise, fundamentally changed the way I evaluate solutions.",
-            "details": [
-                "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
-                "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
-            ],
-            "skills": ["TypeScript", "Azure", "DevOps"]
-        },
-        {
-            "company": "Raygun",
-            "role": "Software Engineer Intern",
-            "start": "Nov 2020",
-            "end": "Feb 2021",
-            "location": "Wellington, NZ",
-            "reflection": "Building a tool that was going to be used by other developers gave me my first taste of real-world engineering. Watching experienced teams turn complex problems into shipping features showed me a rhythm to the work that I found completely addictive.",
-            "details": [
-                "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring."
-            ],
-            "skills": ["React Native", "JavaScript"],
-            "link": "https://www.npmjs.com/package/raygun4reactnative"
-        }
-    ],
-    "education": [
-        {
-            "institution": "Victoria University of Wellington",
-            "qualification": "Bachelor of Engineering with First Class Honours",
-            "major": "Software Engineering",
-            "specialisation": "Networked Applications",
-            "start": "2018",
-            "end": "2021",
-            "details": [
-                "Dean's List for Academic Excellence (2018, 2019, 2020, 2021)"
-            ]
-        },
-        {
-            "institution": "Marlborough Boys' College",
-            "qualification": "National Certificate of Educational Achievement (NCEA, New Zealand)",
-            "start": "2013",
-            "end": "2017",
-            "details": [
-                "Excellence Endorsement (Level 1, 2, 3)"
-            ]
-        }
-    ],
-    "interests": [
-        {
-            "name": "Linux",
-            "summary": "Daily driver. Keyboard first workflow, shell scripting, dotfiles."
-        },
-        {
-            "name": "Retro Gaming",
-            "summary": "Upgrading old handhelds and getting into the retro community."
-        },
-        {
-            "name": "Ergo Keyboards",
-            "summary": "ZSA Planck EZ, Glove80, and now the ZSA Voyager."
-        },
-        {
-            "name": "PC Building",
-            "summary": "Building and maintaining machines. Pure Linux gamer."
-        }
-    ],
-    "skillCategories": {
-        "Lang": ["Go", "C", "Lua", "C#", "JavaScript"],
-        "DevOps": ["Terraform", "GitHub Actions"],
-        "Infra": ["AWS", "Azure", "Railway", "Docker"],
-        "AI": ["Claude", "Gemini"]
+  "work": [
+    {
+      "company": "Splitting Point Studios",
+      "role": "Lead Software Engineer",
+      "start": "Sept 2025",
+      "end": null,
+      "location": "Remote, NZ",
+      "reflection": "Taking on a leadership role is giving me the space to put years of observation into practice. Figuring out how to build a scalable architecture from scratch is a satisfying challenge, and it feels incredibly rewarding to be laying the tracks myself.",
+      "details": [
+        "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
+        "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
+        "Working with an AI-assisted development workflow - not generating code blindly, but using AI as a thinking partner alongside my own judgement."
+      ],
+      "skills": ["Go", "Railway", "Lua", "Roblox Studio", "AWS", "DevOps", "Claude"]
     },
-    "contact": {
-        "github": "https://github.com/HonsonCooky",
-        "linkedin": "https://www.linkedin.com/in/honsoncooky"
+    {
+      "company": "Xero",
+      "role": "Software Engineer",
+      "start": "Aug 2024",
+      "end": "Sept 2025",
+      "location": "Wellington, NZ",
+      "reflection": "Operating in a space where the software itself is the core product shifted my perspective on engineering. Getting to navigate the sheer scale of those systems slowly deepened my understanding of what it takes to keep a massive platform running smoothly.",
+      "details": [
+        "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
+        "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
+        "On-call for production incidents across systems outside my squad's scope."
+      ],
+      "skills": ["C#", "IIS", "AWS", "DevOps"]
     },
-    "references": []
+    {
+      "company": "Z Energy",
+      "role": "Software Engineer",
+      "start": "Nov 2021",
+      "end": "Aug 2024",
+      "location": "Wellington, NZ",
+      "reflection": "Transitioning from university into a large corporate environment taught me how to align technical work with actual business needs. Learning to view code as a mechanism for delivering value, rather than just an academic exercise, fundamentally changed the way I evaluate solutions.",
+      "details": [
+        "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
+        "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
+      ],
+      "skills": ["TypeScript", "Azure", "DevOps"]
+    },
+    {
+      "company": "Raygun",
+      "role": "Software Engineer Intern",
+      "start": "Nov 2020",
+      "end": "Feb 2021",
+      "location": "Wellington, NZ",
+      "reflection": "Building a tool that was going to be used by other developers gave me my first taste of real-world engineering. Watching experienced teams turn complex problems into shipping features showed me a rhythm to the work that I found completely addictive.",
+      "details": [
+        "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring."
+      ],
+      "skills": ["React Native", "JavaScript"],
+      "link": "https://www.npmjs.com/package/raygun4reactnative"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Victoria University of Wellington",
+      "qualification": "Bachelor of Engineering with First Class Honours",
+      "major": "Software Engineering",
+      "specialisation": "Networked Applications",
+      "start": "2018",
+      "end": "2021",
+      "details": ["Dean's List for Academic Excellence (2018, 2019, 2020, 2021)"]
+    },
+    {
+      "institution": "Marlborough Boys' College",
+      "qualification": "National Certificate of Educational Achievement (NCEA, New Zealand)",
+      "start": "2013",
+      "end": "2017",
+      "details": [
+        "Excellence Endorsement (Level 1, 2, 3)",
+        "NCEA Academic Badge (Level 1, 2)",
+        "National Certificate of Mathematics (Level 1)",
+        "Merit Certificate for Excellence in Photography, Digital Technology, English (2017)",
+        "Port Marlborough Award for Consistent, Outstanding Achievement (2016)",
+        "Subject Award for Digital Technology, Photography (2016)",
+        "CACTUS Program - 8 week youth development course focused on resilience, fitness, and teamwork (2016)",
+        "Merit Certificate for Excellence in Digital Media (2015)"
+      ],
+      "theatre": [
+        "Cultural Gold Award for excellence in Musical Theatre, Drama (2017)",
+        "Regional Shakespeare Festival (2015-2017)",
+        "School Production (2013-2017)",
+        "Cultural Gold Award for contribution to choir, drama, musical theatre (2016)",
+        "Dramatic Performance Cup for best dramatic performance (2016)",
+        "School Choir (2013-2016)",
+        "Stage Band (2013-2016)"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Linux",
+      "summary": "Daily driver. Keyboard first workflow, shell scripting, dotfiles."
+    },
+    {
+      "name": "Retro Gaming",
+      "summary": "Upgrading old handhelds and getting into the retro community."
+    },
+    {
+      "name": "Ergo Keyboards",
+      "summary": "ZSA Planck EZ, Glove80, and now the ZSA Voyager."
+    },
+    {
+      "name": "PC Building",
+      "summary": "Building and maintaining machines. Pure Linux gamer."
+    }
+  ],
+  "skillCategories": {
+    "Lang": ["Go", "C", "Lua", "C#", "JavaScript"],
+    "DevOps": ["Terraform", "GitHub Actions"],
+    "Infra": ["AWS", "Azure", "Railway", "Docker"],
+    "AI": ["Claude", "Gemini"]
+  },
+  "contact": {
+    "github": "https://github.com/HonsonCooky",
+    "linkedin": "https://www.linkedin.com/in/honsoncooky"
+  },
+  "references": []
 }
