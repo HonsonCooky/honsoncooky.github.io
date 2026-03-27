@@ -53,7 +53,8 @@ function renderEducation(education) {
             ${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}
             ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
             ${edu.award ? `<div><span class="label">Award:</span> ${edu.award}</div>` : ""}
-            <ul>${edu.details.map((d) => `<li>${wrapBrackets(d)}</li>`).join("")}</ul>
+            <ul>${edu.details.slice(0, 1).map((d) => `<li>${wrapBrackets(d)}</li>`).join("")}</ul>
+            ${edu.details.length > 1 ? `<details><summary>Academic Awards</summary><ul>${edu.details.slice(1).map((d) => `<li>${wrapBrackets(d)}</li>`).join("")}</ul></details>` : ""}
             ${edu.theatre ? `<details><summary>Theatre Awards and Participation</summary><p><em>And you thought I was joking about being musically involved.</em></p><ul>${edu.theatre.map((t) => `<li>${wrapBrackets(t)}</li>`).join("")}</ul></details>` : ""}
         </article>`,
         )
