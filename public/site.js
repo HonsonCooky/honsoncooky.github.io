@@ -19,6 +19,10 @@ function renderNav() {
 
 renderNav();
 
+function wrapBrackets(html) {
+    return html.replace(/\([^)]+\)/g, '<span class="nowrap">$&</span>');
+}
+
 async function loadData() {
     const res = await fetch("/public/data.json");
     return res.json();
@@ -31,9 +35,9 @@ function renderWork(work) {
         <article>
             <h3><span class="nowrap">${job.role} -</span> <span class="nowrap">${job.company}</span></h3>
             <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
-            ${job.reflection ? `<blockquote>"${job.reflection}"</blockquote>` : ""}
-            <ul>${job.details.map((d) => `<li>${d}</li>`).join("")}</ul>
-            <p class="skills">${job.skills.join(SEP)}</p>
+            ${job.reflection ? `<section><h4>Reflection</h4><blockquote>"${job.reflection}"</blockquote></section>` : ""}
+            <section><h4>Responsibilities</h4><ul>${job.details.map((d) => `<li>${wrapBrackets(d)}</li>`).join("")}</ul></section>
+            <section><h4>Skills</h4><p class="skills">${job.skills.map((s) => `<code>${s}</code>`).join(SEP)}</p></section>
         </article>`,
         )
         .join("<hr />");
@@ -49,15 +53,15 @@ function renderEducation(education) {
             ${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}
             ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
             ${edu.award ? `<div><span class="label">Award:</span> ${edu.award}</div>` : ""}
-            <ul>${edu.details.map((d) => `<li>${d}</li>`).join("")}</ul>
-            ${edu.theatre ? `<details><summary>Theatre Awards and Participation</summary><p><em>And you thought I was joking about being musically involved.</em></p><ul>${edu.theatre.map((t) => `<li>${t}</li>`).join("")}</ul></details>` : ""}
+            <ul>${edu.details.map((d) => `<li>${wrapBrackets(d)}</li>`).join("")}</ul>
+            ${edu.theatre ? `<details><summary>Theatre Awards and Participation</summary><p><em>And you thought I was joking about being musically involved.</em></p><ul>${edu.theatre.map((t) => `<li>${wrapBrackets(t)}</li>`).join("")}</ul></details>` : ""}
         </article>`,
         )
         .join("<hr />");
 }
 
 function renderInterests(interests) {
-    return interests
+    return `<div class="interests-list">${interests
         .map(
             (i) => `
         <article>
@@ -65,7 +69,7 @@ function renderInterests(interests) {
             <p>${i.summary}</p>
         </article>`,
         )
-        .join("<hr />");
+        .join("")}</div>`;
 }
 
 function collectSkills(data) {

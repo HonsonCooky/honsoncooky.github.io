@@ -127,6 +127,10 @@
                 padding-right: 1ch;
             }
 
+            .cv-wrapper {
+                overflow-x: auto;
+            }
+
             .cv-contact {
                 font-size: 9pt;
                 color: var(--fg-muted);
@@ -172,6 +176,10 @@
                     display: none;
                 }
 
+                .cv-wrapper {
+                    overflow: visible;
+                }
+
                 .cv-page {
                     color: #1a1a1a;
                     background: #fff;
@@ -204,8 +212,12 @@
     <body>
         <nav></nav>
 
-        <p class="cv-hint">Ctrl+P to save as PDF</p>
+        <div class="page-header">
+            <h1>CV</h1>
+            <p class="cv-hint"><a href="javascript:window.print()">Print / Save as PDF</a></p>
+        </div>
 
+        <div class="cv-wrapper">
         <div class="cv-page">
             <div class="cv-header">
                 <h1>Harrison Cook</h1>
@@ -237,6 +249,7 @@
                     <h2>Interests</h2>
                 </section>
             </div>
+        </div>
         </div>
 
         <script src="/public/site.js"></script>
