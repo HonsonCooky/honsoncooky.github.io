@@ -6,7 +6,7 @@
             "start": "Sept 2025",
             "end": null,
             "location": "Remote, NZ",
-            "reflection": "Taking on a leadership role gave me the space to put years of observation into practice. Figuring out how to build a scalable architecture from scratch has been a satisfying challenge, and it feels incredibly rewarding to be laying the tracks myself.",
+            "reflection": "Taking on a leadership role is giving me the space to put years of observation into practice. Figuring out how to build a scalable architecture from scratch is a satisfying challenge, and it feels incredibly rewarding to be laying the tracks myself.",
             "details": [
                 "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
                 "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
@@ -58,10 +58,9 @@
     "education": [
         {
             "institution": "Victoria University of Wellington",
-            "qualification": "Bachelor of Engineering with Honours",
+            "qualification": "Bachelor of Engineering with First Class Honours",
             "major": "Software Engineering",
             "specialisation": "Networked Applications",
-            "award": "First Class Honours",
             "start": "2018",
             "end": "2021",
             "details": [

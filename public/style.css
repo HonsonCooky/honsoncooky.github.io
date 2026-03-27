@@ -232,6 +232,10 @@ nav a[aria-current="page"] {
 }
 
 
+.nowrap {
+    white-space: nowrap;
+}
+
 blockquote {
     font-style: italic;
     color: var(--fg-muted);

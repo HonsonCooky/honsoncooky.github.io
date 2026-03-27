@@ -29,7 +29,7 @@ function renderWork(work) {
         .map(
             (job) => `
         <article>
-            <h3>${job.role} - ${job.company}</h3>
+            <h3><span class="nowrap">${job.role} -</span> <span class="nowrap">${job.company}</span></h3>
             <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
             ${job.reflection ? `<blockquote>"${job.reflection}"</blockquote>` : ""}
             <ul>${job.details.map((d) => `<li>${d}</li>`).join("")}</ul>
@@ -44,8 +44,8 @@ function renderEducation(education) {
         .map(
             (edu) => `
         <article>
-            <h3>${edu.qualification}</h3>
-            <p class="meta">${edu.start} - ${edu.end}${SEP}${edu.institution}</p>
+            <h3>${edu.qualification.split(" with ").map((p) => `<span class="nowrap">${p}</span>`).join(" with ")}</h3>
+            <p class="meta">${edu.start} - ${edu.end}${SEP}<span class="nowrap">${edu.institution}</span></p>
             ${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}
             ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
             ${edu.award ? `<div><span class="label">Award:</span> ${edu.award}</div>` : ""}
