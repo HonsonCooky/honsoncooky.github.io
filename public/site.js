@@ -44,7 +44,7 @@ function renderEducation(education) {
         .map(
             (edu) => `
         <article>
-            <h3>${edu.qualification.split(" with ").map((p) => `<span class="nowrap">${p}</span>`).join(" with ")}</h3>
+            <h3>${edu.qualification.split(/ (?=with |of |\()/).map((p) => `<span class="nowrap">${p}</span>`).join(" ")}</h3>
             <p class="meta">${edu.start} - ${edu.end}${SEP}<span class="nowrap">${edu.institution}</span></p>
             ${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}
             ${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}
