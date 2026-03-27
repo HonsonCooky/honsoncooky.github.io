@@ -86,12 +86,12 @@
             "summary": "Daily driver. Keyboard first workflow, shell scripting, dotfiles."
         },
         {
-            "name": "Ergonomic Keyboards",
-            "summary": "ZSA Planck EZ, Glove80, and now the ZSA Voyager."
-        },
-        {
             "name": "Retro Gaming",
             "summary": "Upgrading old handhelds and getting into the retro community."
+        },
+        {
+            "name": "Ergo Keyboards",
+            "summary": "ZSA Planck EZ, Glove80, and now the ZSA Voyager."
         },
         {
             "name": "PC Building",
@@ -100,9 +100,9 @@
     ],
     "skillCategories": {
         "Lang": ["Go", "Lua", "C#", "TypeScript", "JavaScript"],
-        "Frameworks": ["React Native"],
-        "Infra": ["AWS", "Railway", "IIS", "Azure"],
-        "Other": ["Claude", "Roblox Studio"]
+        "DevOps": ["Terraform", "GitHub Actions"],
+        "Infra": ["AWS", "Azure", "Railway", "Docker"],
+        "AI": ["Claude", "Gemini"]
     },
     "contact": {
         "github": "https://github.com/HonsonCooky",

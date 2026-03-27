@@ -103,10 +103,28 @@
                 margin: 0.2em 0;
             }
 
-            .cv-skills-grid {
+            .cv-skills-table {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 0.2em 2em;
+                grid-template-columns: auto 1fr auto 1fr;
+                row-gap: 0.2em;
+            }
+
+            .cv-skills-table .label {
+                padding-right: 1ch;
+            }
+
+            .cv-skills-table .gap {
+                padding-left: 3ch;
+            }
+
+            .cv-interests-table {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                row-gap: 0.2em;
+            }
+
+            .cv-interests-table .label {
+                padding-right: 1ch;
             }
 
             .cv-contact {
@@ -252,14 +270,18 @@
                     .join("");
                 document.querySelector("#cv-education").innerHTML += eduHtml;
 
-                const skillsHtml = `<div class="cv-skills-grid">${Object.entries(data.skillCategories)
-                    .map(([cat, skills]) => `<div><span class="label">${cat}:</span> ${skills.join(SEP)}</div>`)
-                    .join("")}</div>`;
+                const cats = Object.entries(data.skillCategories).slice(0, 4);
+                const skillsHtml = `<div class="cv-skills-table">
+                    <span class="label">${cats[0][0]}:</span><span>${cats[0][1].join(SEP)}</span>
+                    <span class="label gap">${cats[1][0]}:</span><span>${cats[1][1].join(SEP)}</span>
+                    <span class="label">${cats[2][0]}:</span><span>${cats[2][1].join(SEP)}</span>
+                    <span class="label gap">${cats[3][0]}:</span><span>${cats[3][1].join(SEP)}</span>
+                </div>`;
                 document.querySelector("#cv-skills").innerHTML += skillsHtml;
 
-                const intHtml = data.interests.slice(0, 3)
-                    .map((i) => `<div><span class="label">${i.name}:</span> ${i.summary}</div>`)
-                    .join("");
+                const intHtml = `<div class="cv-interests-table">${data.interests.slice(0, 3)
+                    .map((i) => `<span class="label">${i.name}:</span><span>${i.summary}</span>`)
+                    .join("")}</div>`;
                 document.querySelector("#cv-interests").innerHTML += intHtml;
             });
         </script>
