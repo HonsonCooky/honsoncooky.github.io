@@ -15,6 +15,12 @@ function renderNav() {
         const current = path === link.href || (link.href !== "/" && path.startsWith(link.href));
         return `<a href="${link.href}"${current ? ' aria-current="page"' : ""}>${link.label}</a>`;
     }).join("");
+    nav.querySelectorAll('a[aria-current="page"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
 }
 
 renderNav();

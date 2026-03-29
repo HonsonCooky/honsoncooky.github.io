@@ -6,7 +6,7 @@
       "start": "Sept 2025",
       "end": null,
       "location": "Remote, NZ",
-      "reflection": "Taking on a leadership role is giving me the space to put years of observation into practice. Figuring out how to build a scalable architecture from scratch is a satisfying challenge, and it feels incredibly rewarding to be laying the tracks myself.",
+      "reflection": "Getting to lead backend development has been genuinely exciting - it's given me the space to implement approaches I've long believed in, and to focus on the engineering rather than the logistics around it. Designing the architecture from scratch to help bring ambitious game ideas to life is exactly the kind of challenge I didn't know I'd love as much as I do.",
       "details": [
         "Leading the backend effort, building Go services focused on keeping things simple, scalable, and manageable by a small team.",
         "Built AWS infrastructure for services across Splitting Point's Roblox titles.",
@@ -20,7 +20,7 @@
       "start": "Aug 2024",
       "end": "Sept 2025",
       "location": "Wellington, NZ",
-      "reflection": "Operating in a space where the software itself is the core product shifted my perspective on engineering. Getting to navigate the sheer scale of those systems slowly deepened my understanding of what it takes to keep a massive platform running smoothly.",
+      "reflection": "Xero was my first real encounter with truly untouched legacy systems - battle-tested software that had been quietly running for years with nobody daring to go near it. Learning to extend those systems carefully, gradually threading new functionality into old foundations without disturbing what already worked, taught me a kind of patience and precision I hadn't needed before.",
       "details": [
         "Maintained and extended legacy IIS applications in C#, reverse-engineering undocumented workflows to ship features without breaking things.",
         "Helped design the replacement platform in modern .NET while keeping the legacy system running.",
@@ -34,12 +34,12 @@
       "start": "Nov 2021",
       "end": "Aug 2024",
       "location": "Wellington, NZ",
-      "reflection": "Transitioning from university into a large corporate environment taught me how to align technical work with actual business needs. Learning to view code as a mechanism for delivering value, rather than just an academic exercise, fundamentally changed the way I evaluate solutions.",
+      "reflection": "Coming out of university into the corporate world was a real adjustment - and honestly, a great one - learning to connect what I was building to business outcomes completely changed how I think about code. It shifted my whole frame from 'what's the clever solution' to 'what actually helps' - a perspective shift that was genuinely hard to align with at first.",
       "details": [
         "Maintained a distributed TypeScript microservices ecosystem across a team of 10-20 developers.",
         "Built integrations with third-party vendors and legacy platforms, including data pipelines to clean and transform incoming datasets."
       ],
-      "skills": ["TypeScript", "Azure", "DevOps"]
+      "skills": ["TypeScript", "Azure", "DevOps", "\"Microsoft-Shop\""]
     },
     {
       "company": "Raygun",
@@ -47,7 +47,7 @@
       "start": "Nov 2020",
       "end": "Feb 2021",
       "location": "Wellington, NZ",
-      "reflection": "Building a tool that was going to be used by other developers gave me my first taste of real-world engineering. Watching experienced teams turn complex problems into shipping features showed me a rhythm to the work that I found completely addictive.",
+      "reflection": "Raygun was my first real look at production software outside of university - building a developer-facing crash reporting library exposed me to a world of decisions and constraints I hadn't encountered before. Without the business perspective I'd develop later, a lot of the decision making was hard to follow at this time, but seeing how software actually lived and breathed outside of academia was fascinating.",
       "details": [
         "Designed, developed, and published raygun4reactnative - a React Native library for crash reporting and real-user monitoring."
       ],
@@ -93,20 +93,24 @@
   ],
   "interests": [
     {
-      "name": "Linux",
-      "summary": "Daily driver. Keyboard first workflow, shell scripting, dotfiles."
-    },
-    {
       "name": "Retro Gaming",
-      "summary": "Upgrading old handhelds and getting into the retro community."
+      "summary": "Gaming has been part of my life for as long as I can remember, but something about handhelds hit differently. Pokemon Red was my first handheld game - I had a PS2 at home with better graphics, but there was real magic in being able to carry a whole world in my pocket. It made my world feel that much bigger. The Gameboy was transparent too, and being able to see the hardware inside sparked something in me that I think quietly pointed me toward computers and lower-level engineering. Today I own a GBA SP and a PS Vita, both of which have been with me since childhood. Recently, wanting a change of pace from modern games that can feel overwhelming and noisy, I pulled them back out - and stumbled into the world of retro upgrades. It's a hobby I plan to pursue seriously.",
+      "cvSummary": "Lifelong retro handheld gamer with a growing interest in console hardware and modding - a hobby with deeper roots than most people expect."
     },
     {
       "name": "Ergo Keyboards",
-      "summary": "ZSA Planck EZ, Glove80, and now the ZSA Voyager."
+      "summary": "A childhood elbow injury left me with limited rotation in my right wrist - not a problem in school, but consistent full-time work at a keyboard changed that. I started with proper touch typing and a company-provided ergonomic keyboard, fell into keyboard-centric workflows and Neovim, and from there went deep into the world of ergonomic keyboards trying to solve a growing list of problems. A Planck EZ, a Glove80, a period of defeat, and a standard keyboard later - I landed on the ZSA Voyager, which I now have mounted to the side of my desk. Being able to rest my elbow properly again has made a real difference, and whilst I'm still a keyboard-first person, I've made peace with the mouse too.",
+      "cvSummary": "Deep into ergonomic keyboards following a childhood elbow injury - currently on a ZSA Voyager after a long journey through ortholinear and split boards."
     },
     {
       "name": "PC Building",
-      "summary": "Building and maintaining machines. Pure Linux gamer."
+      "summary": "My first two years at university were spent on a laptop I bought with my entire savings - a purchase I committed to so fully that I turned down the opportunity to perform at Shakespeare's Globe Theatre in London to afford it. After two years, failing eyesight and the limits of a single screen pushed me toward a proper desktop, funded by a summer working at a slaughterhouse. Once I had the power of an AMD desktop in my hands, everything opened up - bigger projects, proper gaming, and for the first time a real visibility into the hardware running beneath my software. That deepened my interest in lower-level computing considerably, and the knowledge I picked up along the way has since helped friends and family build their own setups.",
+      "cvSummary": "Self-built Linux desktop - started building after funding my first rig through a summer of manual labour, and have been helping friends and family build their own setups ever since."
+    },
+    {
+      "name": "Linux",
+      "summary": "Linux is my daily driver - once I was no longer tied to Windows for work, making the switch was an easy call. After years of fighting developer-unfriendly edge cases and working around the OS rather than with it, the speed and control Linux gives me felt like a completely different world.",
+      "cvSummary": "Made the full switch to Fedora Linux once I was no longer tied to Windows for work - haven't considered going back."
     }
   ],
   "skillCategories": {

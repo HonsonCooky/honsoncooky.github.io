@@ -48,7 +48,7 @@
             }
 
             .cv-page h1 {
-                font-size: 18pt;
+                font-size: 15pt;
                 color: var(--accent);
                 margin-bottom: 0.2em;
             }
@@ -61,25 +61,25 @@
 
             .cv-divider {
                 color: var(--fg-muted);
-                font-size: 18pt;
+                font-size: 15pt;
             }
 
             .cv-role {
-                font-size: 14pt;
+                font-size: 12pt;
                 color: var(--fg-muted);
             }
 
             .cv-page h2 {
-                font-size: 13pt;
+                font-size: 11pt;
                 color: var(--accent);
                 border-bottom: 1px solid var(--border);
                 padding-bottom: 0.15em;
-                margin: 0 0 0.5em 0;
+                margin: 0 0 0.3em 0;
             }
 
             .cv-page h3 {
-                font-size: 11pt;
-                margin: 0.8em 0 0.1em 0;
+                font-size: 10pt;
+                margin: 0.5em 0 0.1em 0;
             }
 
             .cv-page .meta {
@@ -89,7 +89,8 @@
             }
 
             .cv-page ul {
-                padding-left: 1.5em;
+                list-style: "- " inside;
+                padding-left: 0;
                 margin: 0.2em 0;
             }
 
@@ -222,14 +223,15 @@
             <div class="cv-header">
                 <h1>Harrison Cook</h1>
                 <span class="cv-divider">::</span>
-                <span class="cv-role">Software Engineer</span>
+                <span class="cv-role">Lead Software Engineer</span>
             </div>
             <p class="cv-contact" id="cv-contact"></p>
             <p class="summary">
-                Born into a family addicted to music and theatre, I spent years on stage before calculus and physics
-                pulled me in a different direction. The result is a wild mix of showman and nerd, engulfed by
-                computers, and having a blast. I've built production systems in Go, C#, and TypeScript. Outside of
-                work, my mind wanders to game development in C - building worlds from nothing but instructions.
+                Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and
+                physics completely hijacked my life plan - the result is a wild mix of showman and nerd. These days
+                I'm leading backend development in Go, helping bring ambitious multiplayer game ideas to life.
+                Outside of work, I've been exploring low-level game development in C - no engine, no shortcuts,
+                just trying to understand how games work from first principles.
             </p>
 
             <div class="cv-body">
@@ -300,7 +302,7 @@
                 document.querySelector("#cv-skills").innerHTML += skillsHtml;
 
                 const intHtml = `<div class="cv-interests-table">${data.interests.slice(0, 3)
-                    .map((i) => `<span class="label">${i.name}:</span><span>${i.summary}</span>`)
+                    .map((i) => `<span class="label">${i.name}:</span><span>${i.cvSummary || i.summary}</span>`)
                     .join("")}</div>`;
                 document.querySelector("#cv-interests").innerHTML += intHtml;
             });
