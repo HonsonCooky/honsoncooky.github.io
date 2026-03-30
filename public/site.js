@@ -16,6 +16,7 @@ function renderNav() {
         return `<a href="${link.href}"${current ? ' aria-current="page"' : ""}>${link.label}</a>`;
     }).join("");
     nav.querySelectorAll('a[aria-current="page"]').forEach((a) => {
+        if (a.getAttribute("href") !== path) return;
         a.addEventListener("click", (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });

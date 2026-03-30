@@ -21,11 +21,11 @@
             <p>
                 I've been thinking a lot lately about what engineering actually means - not the job title, but the
                 discipline. The word gets used so loosely in software that I think it's lost some of its original
-                weight. But the longer I sit with it, the more I realise this isn't really about defining
-                engineering - it's about <a href="https://en.wikipedia.org/wiki/Qualia">qualia</a>: understanding how
-                I think, and how that differs from the people around me.
-                This is my attempt to articulate where my head is at in 2026 - the understanding I'm currently
-                operating under, where it came from, and why I think it matters.
+                weight. But the longer I sit with it, the more I think the real issue isn't the word - it's
+                <a href="https://en.wikipedia.org/wiki/Qualia">qualia</a>: the differences in how people
+                subjectively experience thinking, problem-solving, and the work itself. This is my attempt to map
+                my own, understand how it differs from others around me, and articulate why I think that distinction
+                actually matters.
             </p>
         </section>
 
@@ -37,24 +37,35 @@
                 your work. A structural engineer understands material science. An electrical engineer understands
                 circuit theory. In some places "engineer" is even a licensed title - Canada, parts of Europe, Brazil.
                 Software has largely developed without that weight, and Casey Muratori and DHH have both written about
-                what that costs us. I don't know how to say this without sounding like I'm ranking people - that's not
-                my intent. But the blurriness has been a real issue for me personally. There are titles that don't
-                carry this expectation - programmer, software developer, software writer - and none of them are lesser.
-                I just want the word I use to mean something.
+                what that costs us.
             </p>
             <p>
-                The reason it's blurry in software is that the stack gives you the option. Write <code>firmware</code>
-                and the hardware will demand you understand it. Write high-level application code and the abstractions
-                are good enough that you can ship indefinitely without asking what's underneath. The engineering
-                mindset, to me, is the neural wiring that makes you ask anyway - and I think being honest about that
-                matters more than pretending there's one right way to experience the work.
+                What it has cost me, specifically, is time - spent identifying problems that others on the same team
+                couldn't see, fighting fires that felt invisible to everyone else, and struggling to explain why
+                something was wrong to people whose experience of the codebase was fundamentally different from mine.
+                And it's gone the other way too: people have spent real effort trying to teach me things that never
+                clicked, not because the lessons were wrong, but because the way they experienced the problem didn't
+                map to the way I did. That's not a failing on anyone's part. It's what happens when people with
+                different qualia are handed the same job title and expected to share the same mental model of the work.
             </p>
             <p>
-                That's available at any level of the stack. Take <code>React</code> - on the surface it's a UI library,
-                but underneath it there's a reconciler, a virtual DOM, a rendering pipeline, and if you're using SSR, a
-                whole server-side execution model to reason about. Someone who understands those foundations isn't just
-                a frontend developer - they're a software engineer who happens to work in the browser. It's never about
-                the layer. It's about whether that curiosity to understand what's underneath is in you.
+                Low-level development used to enforce this - if you were close enough to the hardware, it demanded
+                understanding. That's no longer the default. Most software is written far enough up the stack that
+                you can operate indefinitely on assumptions you've never tested, patterns you've never traced back
+                to their origin. Without the curiosity to go look anyway, those assumptions quietly become the
+                foundation of your practice - and some of them are just wrong. Not wrong in a way that breaks
+                anything immediately, but wrong in a way that makes the system harder to reason about over time.
+                The thing is, if everyone on a team shares the same assumptions, the same gaps, the same mental
+                model - it works. The incoherence is invisible because it's consistent. The problems only surface
+                when someone wired differently shows up.
+            </p>
+            <p>
+                This isn't an argument for low-level development. The curiosity to understand what's underneath is
+                available at any layer. Take <code>React</code> - on the surface it's a UI library, but underneath
+                there's a reconciler, a virtual DOM, a rendering pipeline, and if you're using <code>SSR</code>, a
+                whole server-side execution model. Someone who has traced those foundations isn't just a frontend
+                developer - they're a software engineer who happens to work in the browser. The layer doesn't
+                matter. The neural wiring does.
             </p>
         </section>
 
@@ -69,9 +80,9 @@
                 warm. It's a real limitation, and I don't pretend otherwise.
             </p>
             <p>
-                So I think from the ground up instead. When you hold the underlying ideas, rules and best practices
-                become logical consequences rather than trivia to recall. You don't need a rule for every edge case
-                because the core concepts cover the ground for you. A pointer is just a memory address referring to
+                So I think from the ground up instead. When I hold the underlying ideas, rules and best practices
+                become logical consequences rather than trivia to recall. I don't need a rule for every edge case
+                because the core concepts cover the ground for me. A pointer is just a memory address referring to
                 another location. Contiguous allocation is just elements stored side-by-side for efficient hardware
                 access. An array is those two ideas composed together. A hash map is an array plus a hashing function.
                 None of it is magic - it's just well-layered ideas, all the way down.
@@ -79,14 +90,15 @@
             <p>
                 We wrap these compositions in labels - patterns, paradigms, architectures - and those labels are
                 genuinely useful for communication. But they aren't understanding. Understanding is the ability to tear
-                the label off and see what's underneath. When you can do that, the labels become natural rather than
-                memorised, and you can adapt when the problem doesn't fit a familiar shape.
+                the label off and see what's underneath. For me, that ability is load-bearing - it's what I have
+                instead of recall. I can adapt when the problem doesn't fit a familiar shape because I'm not relying
+                on the shape.
             </p>
             <p>
-                Not everyone thinks this way, and that's genuinely a good thing. There are people who can hold an
-                enormous amount of context in their heads - who know the AWS service matrix cold, or can recall the
-                exact LINQ method for a given situation without pausing. That's a real talent, and teams need it. The
-                trick is knowing which kind of brain you have and putting it where it actually belongs.
+                There are people whose qualia is almost the opposite of mine - who can hold an enormous amount of
+                context warm, recall the exact method for a situation without pausing, navigate a broad surface area
+                without losing the thread. That's a genuinely different and valuable way of experiencing the work.
+                Teams need both. The problem isn't the difference - it's not knowing it's there.
             </p>
         </section>
 
@@ -100,17 +112,13 @@
                 like all variables, they're constantly updating and need to be re-evaluated.
             </p>
             <p>
-                The industry has at least started to acknowledge this - iterative development, retrospectives, the idea
-                that nothing ships fully formed. But that attitude tends to stop at the code. Legacy systems are full of
-                decisions that made sense once and have been silently load-bearing ever since. Conditions change,
-                assumptions expire, and what worked yesterday might not work tomorrow. Treating any constraint as fixed
-                is where things start to go wrong.
-            </p>
-            <p>
-                I think a lot of frustration in engineering teams comes from this. People build processes and best
-                practices that make sense at the time, and then never revisit them. The process calcifies. New people
-                inherit it as gospel. And eventually nobody remembers why it exists in the first place - they just know
-                it's "how things are done." That's not engineering. That's tradition.
+                This is where qualia starts to compound the problem. When a team shares the same gaps - the same
+                untested assumptions, the same patterns nobody has traced back - the process calcifies around those
+                gaps. Retrospectives happen, but they don't surface what nobody can see. Legacy systems accumulate
+                decisions that made sense to the people who made them, and new people inherit those decisions as gospel
+                without inheriting the mental model behind them. Eventually nobody remembers why it exists - they just
+                know it's "how things are done." The qualia that built the system is gone, and what's left looks like
+                tradition.
             </p>
         </section>
 
@@ -182,18 +190,18 @@
                 this industry.
             </p>
             <p>
-                Writing this post has been as much about understanding my own way of thinking as it has been about
+                Writing this post has been as much about understanding my own qualia as it has been about
                 understanding others'. I'm not particularly interested in labels - senior, junior, frontend, backend.
-                What I care about is how someone thinks. I want to find people who can look at my work and scrutinise
-                it not from opinion or memorised pattern, but from first principles. People who can tell me why
-                something is wrong, not just that it feels wrong. That's the kind of collaboration that actually makes
-                me better.
+                What I care about is how someone experiences the work. I want to find people whose qualia is visible
+                to them - who can engage with a problem from their own foundation, tell me why something is wrong
+                rather than just that it feels wrong, and recognise when our mental models diverge instead of assuming
+                one of us is just mistaken. That's the kind of collaboration that actually moves things forward.
             </p>
             <p>
                 If you've ever felt like the standard way of doing things in this industry doesn't quite fit how your
                 brain works - I'd genuinely like to hear from you. Not because I think my way is right, but because
-                understanding how different people experience thinking is the most interesting problem I've found in
-                this field.
+                the most interesting problems I've found in this field have come from people who experience it
+                differently than I do.
             </p>
         </section>
 
