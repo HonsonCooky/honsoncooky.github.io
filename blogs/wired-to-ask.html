@@ -14,7 +14,8 @@
         <div class="page-header">
             <h1>Wired to Ask</h1>
             <p class="post-meta">2026-03-30</p>
-            <p class="post-meta">Ideas and approval by Harrison Cook, writing assisted by AI</p>
+            <p class="post-meta">Written by Harrison Cook</p>
+            <p class="post-meta">Writing assisted by AI</p>
         </div>
 
         <section>
@@ -71,18 +72,17 @@
             <p>
                 Low-level development used to enforce this - if you were close enough to the hardware, it demanded
                 understanding. That's no longer the default. Most software is written far enough up the stack that you
-                can operate indefinitely on assumptions you've never tested, patterns you've never traced back to their
-                origin. Without the curiosity to go look anyway, those assumptions quietly become the foundation of your
-                practice - and some of them are just wrong. Not wrong in a way that breaks anything immediately, but
-                wrong in a way that makes the system harder to reason about over time. The thing is, if everyone on a
-                team shares the same assumptions, the same gaps, the same mental model - it works. The incoherence is
-                invisible because it's consistent. The problems only surface when someone wired differently shows up.
+                can operate indefinitely on assumptions you've never tested. Without the curiosity to go look anyway,
+                those assumptions quietly become the foundation of your practice. If everyone on a team shares the same
+                gaps, the incoherence is invisible - it's consistent. Legacy systems accumulate decisions that made
+                sense to the people who made them, and new people inherit those decisions as gospel without inheriting
+                the mental model behind them. The qualia that built the system is gone, and what's left looks like
+                tradition.
             </p>
             <p>
                 This isn't an argument for low-level development. The compulsion to understand what's underneath can
-                show up at any layer - and whether it's innate or learned, it's the thing that distinguishes the
-                experience. Take <code>React</code> - on the surface it's a UI library, but underneath there's a
-                reconciler, a virtual DOM, a rendering pipeline, and if you're using <code>SSR</code>, a whole
+                show up at any layer. Take <code>React</code> - on the surface it's a UI library, but underneath there's
+                a reconciler, a virtual DOM, a rendering pipeline, and if you're using <code>SSR</code>, a whole
                 server-side execution model. Someone who has traced those foundations isn't just a frontend developer -
                 they're a software engineer who happens to work in the browser. The layer doesn't matter. The neural
                 wiring does.
@@ -90,107 +90,41 @@
         </section>
 
         <section>
-            <h2>Deriving vs Memorising</h2>
+            <h2>How I Think</h2>
 
             <p>
                 My memory doesn't retain things I'm not actively using. Context-switch into a part of the stack I
-                haven't touched in a month and it's mostly gone - the specific flags, the service quirks, the config
-                that only makes sense if you've been staring at it all week. Fullstack work on something like
-                <code>AWS</code> is a particular kind of nightmare for this; there's just too much surface area to keep
-                warm. It's a real limitation, and I don't pretend otherwise.
+                haven't touched in a month and it's mostly gone. Fullstack work on something like <code>AWS</code> is a
+                particular kind of nightmare for this - there's just too much surface area to keep warm. It's a real
+                limitation, and I don't pretend otherwise. So I think from the ground up instead. When I hold the
+                underlying ideas, rules and best practices become logical consequences rather than trivia to recall. A
+                pointer is a memory address. Contiguous allocation is elements side-by-side. An array is those two ideas
+                composed. A hash map is an array plus a hashing function. None of it is magic - just well-layered ideas,
+                all the way down. For me, that ability to derive is load-bearing - it's what I have instead of recall.
             </p>
             <p>
-                So I think from the ground up instead. When I hold the underlying ideas, rules and best practices become
-                logical consequences rather than trivia to recall. I don't need a rule for every edge case because the
-                core concepts cover the ground for me. A pointer is just a memory address referring to another location.
-                Contiguous allocation is just elements stored side-by-side for efficient hardware access. An array is
-                those two ideas composed together. A hash map is an array plus a hashing function. None of it is magic -
-                it's just well-layered ideas, all the way down.
+                There are people whose qualia is almost the opposite - who can hold an enormous amount of context warm,
+                recall the exact method for a situation without pausing, navigate a broad surface area without losing
+                the thread. That's a genuinely different and valuable way of experiencing the work. Teams need both. The
+                problem isn't the difference - it's not knowing it's there.
             </p>
             <p>
-                We wrap these compositions in labels - patterns, paradigms, architectures - and those labels are
-                genuinely useful for communication. But they aren't understanding. Understanding is the ability to tear
-                the label off and see what's underneath. For me, that ability is load-bearing - it's what I have instead
-                of recall. I can adapt when the problem doesn't fit a familiar shape because I'm not relying on the
-                shape.
+                Much of this crystallised through years of feeling like I was doing <code>C#</code> wrong - not
+                incorrectly, just wrong for me. Two senior <code>C#</code> developers can write code that reads like
+                entirely different languages, because the coherence lives in the programmer, not the tool. What
+                eventually gave me stability was understanding that the compiler and <code>JIT</code> largely erase the
+                stylistic differences anyway - different approaches compile down to similar <code>IL</code>, and the
+                <code>JIT</code> optimises from there. The disagreements were never about performance. They were about
+                whose qualia the community had decided to optimise for. <code>C#</code> and <code>SQL</code>
+                are both praised for resembling English. But I don't want a language that reads like a sentence - I want
+                one that reads like intent.
             </p>
             <p>
-                There are people whose qualia is almost the opposite of mine - who can hold an enormous amount of
-                context warm, recall the exact method for a situation without pausing, navigate a broad surface area
-                without losing the thread. That's a genuinely different and valuable way of experiencing the work. Teams
-                need both. The problem isn't the difference - it's not knowing it's there.
-            </p>
-        </section>
-
-        <section>
-            <h2>What the Industry Taught Me</h2>
-
-            <p>
-                The industry can't function if every decision gets thought through from first principles. I've had to
-                learn to move forward with incomplete understanding, and that's okay. Shipping matters. Deadlines
-                matter. Making money matters. None of those things are the enemy of engineering - they're just
-                variables. But like all variables, they're constantly updating and need to be re-evaluated.
-            </p>
-            <p>
-                This is where qualia starts to compound the problem. When a team shares the same gaps - the same
-                untested assumptions, the same patterns nobody has traced back - the process calcifies around those
-                gaps. Retrospectives happen, but they don't surface what nobody can see. Legacy systems accumulate
-                decisions that made sense to the people who made them, and new people inherit those decisions as gospel
-                without inheriting the mental model behind them. Eventually nobody remembers why it exists - they just
-                know it's "how things are done." The qualia that built the system is gone, and what's left looks like
-                tradition.
-            </p>
-        </section>
-
-        <section>
-            <h2>What C# Taught Me</h2>
-
-            <p>
-                Much of this crystallised through years of feeling like I was doing <code>C#</code> wrong. Not
-                incorrectly - just wrong for me. I spent a long time looking for the "right way" to write it and kept
-                hitting walls. Two senior <code>C#</code> developers can write code that reads like entirely different
-                languages - the coherence lives in the programmer, not the tool. For someone whose qualia depends on the
-                tool providing that structure, it's exhausting.
-            </p>
-            <p>
-                What eventually gave me some mental stability was understanding that the compiler and <code>JIT</code>
-                largely erase the stylistic differences anyway. Different approaches frequently compile down to similar
-                <code>IL</code>, and the <code>JIT</code> optimises further from there. Once I understood that, I could
-                stop fighting over correctness and just write something that worked, then fix the surface for whoever
-                needed to review it. Annoyingly slow process - but it was the only one that didn't break me. And it only
-                became available once I understood why the disagreements were happening: they were never about
-                performance. They were about whose qualia the community had decided to optimise for.
-            </p>
-            <p>
-                <code>C#</code> is praised for readability because it resembles English - and <code>SQL</code> takes
-                that even further, practically reading as full sentences. I understand both well enough under the hood.
-                But writing them by hand is where I struggle. The grammar doesn't map to how I think. Constructing a
-                query or an expression manually feels like translating - I know what I mean, but the syntax wants me to
-                say it in a way that doesn't come naturally. I don't want a language that reads like a sentence. I want
-                one that reads like intent. That's a qualia preference, not an objective standard - but it's mine, and
-                pretending otherwise only made the problem harder to see.
-            </p>
-        </section>
-
-        <section>
-            <h2>What I Actually Need from a Tool</h2>
-
-            <p>
-                This is where qualia becomes practical. The compulsion to understand is already expensive - it takes
-                time and focus. A tool that demands I also manage its structure is compounding that cost for no reason.
-                The struggle with <code>C#</code> taught me something concrete about what I need - not what's
-                objectively better, but what frees me to actually use that compulsion. I need sensible defaults and
-                strong opinions. When a tool has opinions, I can quickly determine whether it's suitable for my existing
-                problem space. If it is, I spend less time deciding how to express something and more time on what I'm
-                expressing. The difference between fighting a tool and flowing with it is night and day.
-            </p>
-            <p>
-                <code>Go</code> is a good example of this working well for me. The language has strong opinions about
-                formatting, error handling, and package structure - including folder layout, which maps directly to
-                package boundaries. I don't agree with all of it, but I don't need to. Learning it once, or slightly
-                bending it where needed, was a far smaller ask than navigating a language that left all of that to me.
-                The cognitive load drops dramatically when the tool handles the structure and lets me focus on the
-                ideas.
+                The compulsion to understand is already expensive. A tool that demands I also manage its structure
+                compounds that cost for no reason. <code>Go</code> works well for me because it has strong opinions
+                about formatting, error handling, and package structure - including folder layout, which maps directly
+                to package boundaries. I don't agree with all of it, but I don't need to. Learning it once was a far
+                smaller ask than navigating a language that left all of that to me.
             </p>
         </section>
 
