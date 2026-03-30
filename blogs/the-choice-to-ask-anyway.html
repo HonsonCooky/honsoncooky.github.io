@@ -22,10 +22,9 @@
                 I've been thinking a lot lately about what engineering actually means - not the job title, but the
                 discipline. The word gets used so loosely in software that I think it's lost some of its original
                 weight. But the longer I sit with it, the more I think the real issue isn't the word - it's
-                <a href="https://en.wikipedia.org/wiki/Qualia">qualia</a>: the differences in how people
-                subjectively experience thinking, problem-solving, and the work itself. This is my attempt to map
-                my own, understand how it differs from others around me, and articulate why I think that distinction
-                actually matters.
+                <a href="https://en.wikipedia.org/wiki/Qualia">qualia</a>: the differences in how people subjectively
+                experience thinking, problem-solving, and the work itself. This is my attempt to map my own, understand
+                how it differs from others around me, and articulate why I think that distinction actually matters.
             </p>
         </section>
 
@@ -44,28 +43,27 @@
                 couldn't see, fighting fires that felt invisible to everyone else, and struggling to explain why
                 something was wrong to people whose experience of the codebase was fundamentally different from mine.
                 And it's gone the other way too: people have spent real effort trying to teach me things that never
-                clicked, not because the lessons were wrong, but because the way they experienced the problem didn't
-                map to the way I did. That's not a failing on anyone's part. It's what happens when people with
-                different qualia are handed the same job title and expected to share the same mental model of the work.
+                clicked, not because the lessons were wrong, but because the way they experienced the problem didn't map
+                to the way I did. That's not a failing on anyone's part. It's what happens when people with different
+                qualia are handed the same job title and expected to share the same mental model of the work.
             </p>
             <p>
                 Low-level development used to enforce this - if you were close enough to the hardware, it demanded
-                understanding. That's no longer the default. Most software is written far enough up the stack that
-                you can operate indefinitely on assumptions you've never tested, patterns you've never traced back
-                to their origin. Without the curiosity to go look anyway, those assumptions quietly become the
-                foundation of your practice - and some of them are just wrong. Not wrong in a way that breaks
-                anything immediately, but wrong in a way that makes the system harder to reason about over time.
-                The thing is, if everyone on a team shares the same assumptions, the same gaps, the same mental
-                model - it works. The incoherence is invisible because it's consistent. The problems only surface
-                when someone wired differently shows up.
+                understanding. That's no longer the default. Most software is written far enough up the stack that you
+                can operate indefinitely on assumptions you've never tested, patterns you've never traced back to their
+                origin. Without the curiosity to go look anyway, those assumptions quietly become the foundation of your
+                practice - and some of them are just wrong. Not wrong in a way that breaks anything immediately, but
+                wrong in a way that makes the system harder to reason about over time. The thing is, if everyone on a
+                team shares the same assumptions, the same gaps, the same mental model - it works. The incoherence is
+                invisible because it's consistent. The problems only surface when someone wired differently shows up.
             </p>
             <p>
                 This isn't an argument for low-level development. The curiosity to understand what's underneath is
                 available at any layer. Take <code>React</code> - on the surface it's a UI library, but underneath
-                there's a reconciler, a virtual DOM, a rendering pipeline, and if you're using <code>SSR</code>, a
-                whole server-side execution model. Someone who has traced those foundations isn't just a frontend
-                developer - they're a software engineer who happens to work in the browser. The layer doesn't
-                matter. The neural wiring does.
+                there's a reconciler, a virtual DOM, a rendering pipeline, and if you're using <code>SSR</code>, a whole
+                server-side execution model. Someone who has traced those foundations isn't just a frontend developer -
+                they're a software engineer who happens to work in the browser. The layer doesn't matter. The neural
+                wiring does.
             </p>
         </section>
 
@@ -80,25 +78,25 @@
                 warm. It's a real limitation, and I don't pretend otherwise.
             </p>
             <p>
-                So I think from the ground up instead. When I hold the underlying ideas, rules and best practices
-                become logical consequences rather than trivia to recall. I don't need a rule for every edge case
-                because the core concepts cover the ground for me. A pointer is just a memory address referring to
-                another location. Contiguous allocation is just elements stored side-by-side for efficient hardware
-                access. An array is those two ideas composed together. A hash map is an array plus a hashing function.
-                None of it is magic - it's just well-layered ideas, all the way down.
+                So I think from the ground up instead. When I hold the underlying ideas, rules and best practices become
+                logical consequences rather than trivia to recall. I don't need a rule for every edge case because the
+                core concepts cover the ground for me. A pointer is just a memory address referring to another location.
+                Contiguous allocation is just elements stored side-by-side for efficient hardware access. An array is
+                those two ideas composed together. A hash map is an array plus a hashing function. None of it is magic -
+                it's just well-layered ideas, all the way down.
             </p>
             <p>
                 We wrap these compositions in labels - patterns, paradigms, architectures - and those labels are
                 genuinely useful for communication. But they aren't understanding. Understanding is the ability to tear
-                the label off and see what's underneath. For me, that ability is load-bearing - it's what I have
-                instead of recall. I can adapt when the problem doesn't fit a familiar shape because I'm not relying
-                on the shape.
+                the label off and see what's underneath. For me, that ability is load-bearing - it's what I have instead
+                of recall. I can adapt when the problem doesn't fit a familiar shape because I'm not relying on the
+                shape.
             </p>
             <p>
                 There are people whose qualia is almost the opposite of mine - who can hold an enormous amount of
                 context warm, recall the exact method for a situation without pausing, navigate a broad surface area
-                without losing the thread. That's a genuinely different and valuable way of experiencing the work.
-                Teams need both. The problem isn't the difference - it's not knowing it's there.
+                without losing the thread. That's a genuinely different and valuable way of experiencing the work. Teams
+                need both. The problem isn't the difference - it's not knowing it's there.
             </p>
         </section>
 
@@ -126,35 +124,29 @@
             <h2>What C# Taught Me</h2>
 
             <p>
-                A lot of where my ideas came from was my own experience - and a big part of that experience was
-                wrestling with <code>C#</code>.
+                Much of this crystallised through years of feeling like I was doing <code>C#</code> wrong. Not
+                incorrectly - just wrong for me. I spent a long time looking for the "right way" to write it and kept
+                hitting walls. Two senior <code>C#</code> developers can write code that reads like entirely different
+                languages - the coherence lives in the programmer, not the tool. For someone whose qualia depends
+                on the tool providing that structure, it's exhausting.
             </p>
             <p>
-                <code>C#</code> offers a dozen ways to solve any given problem, but rarely has an opinion on which one
-                you should pick. For someone trying to reason from first principles, that lack of direction is
-                exhausting. I spent a long time looking for the "right way" to write <code>C#</code> and kept hitting
-                walls. Two senior <code>C#</code> developers can write code that looks like entirely different
-                languages, because the coherence lives in the programmer, not the tool.
+                What eventually gave me some mental stability was understanding that the compiler and <code>JIT</code>
+                largely erase the stylistic differences anyway. Different approaches frequently compile down to similar
+                <code>IL</code>, and the <code>JIT</code> optimises further from there. Once I understood that, I could
+                stop fighting over correctness and just write something that worked, then fix the surface for whoever
+                needed to review it. Annoyingly slow process - but it was the only one that didn't break me. And it
+                only became available once I understood why the disagreements were happening: they were never about
+                performance. They were about whose qualia the community had decided to optimise for.
             </p>
             <p>
-                What makes this even more frustrating is that the compiler and <code>JIT</code> are good enough to
-                optimise most of these stylistic differences away. Different approaches frequently compile down to very
-                similar <code>IL</code>, and the <code>JIT</code> optimises further from there. So the "rules" about how
-                to write <code>C#</code> aren't really about performance - they're about what the community has decided
-                is the most human-friendly way to express things. And the human they designed for isn't me.
-            </p>
-            <p>
-                <code>C#</code> is commonly praised for being readable because it resembles English. But English is full
-                of ambiguity - the same sentence can mean entirely different things depending on context, tone, and
-                assumption. Modelling a programming language after that has given me more headaches than I can count. I
-                don't want a language that reads like prose. I want one that reads like intent.
-            </p>
-            <p>
-                None of this is to say <code>C#</code> is a bad language - it clearly works brilliantly for a lot of
-                people, and I respect that. But for me it's a genuine hindrance. I've met other engineers who share that
-                struggle without quite being able to articulate why. My current hypothesis is that it comes down to
-                qualia again - the language optimises for one way of experiencing code, and if your internal experience
-                doesn't match, you're fighting the tool instead of using it.
+                <code>C#</code> is praised for readability because it resembles English - and <code>SQL</code> takes
+                that even further, practically reading as full sentences. I understand both well enough under the hood.
+                But writing them by hand is where I struggle. The grammar doesn't map to how I think. Constructing
+                a query or an expression manually feels like translating - I know what I mean, but the syntax wants me
+                to say it in a way that doesn't come naturally. I don't want a language that reads like a sentence. I want
+                one that reads like intent. That's a qualia preference, not an objective standard - but it's mine, and
+                pretending otherwise only made the problem harder to see.
             </p>
         </section>
 
@@ -171,9 +163,11 @@
             </p>
             <p>
                 <code>Go</code> is a good example of this working well for me. The language has strong opinions about
-                formatting, error handling, and package structure. I don't agree with all of them, but I don't need to -
-                the fact that they exist means I can evaluate them once and move on. The cognitive load drops
-                dramatically when the tool handles the structure and lets me focus on the ideas.
+                formatting, error handling, and package structure - including folder layout, which maps directly to
+                package boundaries. I don't agree with all of it, but I don't need to. Learning it once, or slightly
+                bending it where needed, was a far smaller ask than navigating a language that left all of that to me.
+                The cognitive load drops dramatically when the tool handles the structure and lets me focus on the
+                ideas.
             </p>
         </section>
 
@@ -190,18 +184,18 @@
                 this industry.
             </p>
             <p>
-                Writing this post has been as much about understanding my own qualia as it has been about
-                understanding others'. I'm not particularly interested in labels - senior, junior, frontend, backend.
-                What I care about is how someone experiences the work. I want to find people whose qualia is visible
-                to them - who can engage with a problem from their own foundation, tell me why something is wrong
-                rather than just that it feels wrong, and recognise when our mental models diverge instead of assuming
-                one of us is just mistaken. That's the kind of collaboration that actually moves things forward.
+                Writing this post has been as much about understanding my own qualia as it has been about understanding
+                others'. I'm not particularly interested in labels - senior, junior, frontend, backend. What I care
+                about is how someone experiences the work. I want to find people whose qualia is visible to them - who
+                can engage with a problem from their own foundation, tell me why something is wrong rather than just
+                that it feels wrong, and recognise when our mental models diverge instead of assuming one of us is just
+                mistaken. That's the kind of collaboration that actually moves things forward.
             </p>
             <p>
                 If you've ever felt like the standard way of doing things in this industry doesn't quite fit how your
-                brain works - I'd genuinely like to hear from you. Not because I think my way is right, but because
-                the most interesting problems I've found in this field have come from people who experience it
-                differently than I do.
+                brain works - I'd genuinely like to hear from you. Not because I think my way is right, but because the
+                most interesting problems I've found in this field have come from people who experience it differently
+                than I do.
             </p>
         </section>
 
