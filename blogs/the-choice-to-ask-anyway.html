@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <title>Wired to Ask - Harrison Cook</title>
+        <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+        <link rel="stylesheet" href="/public/style.css" />
+    </head>
+    <body>
+        <nav></nav>
+
+        <div class="page-header">
+            <h1>Wired to Ask</h1>
+            <p class="post-meta">2026-03-30</p>
+            <p class="post-meta">Ideas and approval by Harrison Cook, writing assisted by AI</p>
+        </div>
+
+        <section>
+            <p>
+                I've been thinking a lot lately about what engineering actually means - not the job title, but the
+                discipline. The word gets used so loosely in software that I think it's lost some of its original
+                weight. This is my attempt to articulate where my head is at in 2026 - the understanding I'm currently
+                operating under, where it came from, and why I think it matters.
+            </p>
+        </section>
+
+        <section>
+            <h2>What Engineering Means to Me</h2>
+
+            <p>
+                Engineering, at its root, is the application of understanding to solve practical problems. A structural
+                engineer understands material science. An electrical engineer understands circuit theory. Across every
+                traditional engineering discipline, the expectation is that you understand the layer below your work -
+                not because it's interesting, but because the work demands it.
+            </p>
+            <p>
+                I think software engineering should carry the same expectation. And I think the reason it often doesn't
+                is that software gives you the option. Write <code>firmware</code> and the hardware will demand you
+                understand it. Write high-level application code and the abstractions are good enough that you can ship
+                indefinitely without ever asking what's underneath. The engineering mindset, to me, is the neural wiring
+                that makes you ask anyway.
+            </p>
+            <p>
+                That's available at any level of the stack. Take <code>React</code> - on the surface it's a UI library,
+                but underneath it there's a reconciler, a virtual DOM, a rendering pipeline, and if you're using SSR, a
+                whole server-side execution model to reason about. Someone who understands those foundations isn't just
+                a frontend developer - they're a software engineer who happens to work in the browser. It's never about
+                the layer. It's about whether that curiosity to understand what's underneath is in you.
+            </p>
+        </section>
+
+        <section>
+            <h2>Deriving vs Memorising</h2>
+
+            <p>
+                My memory doesn't retain things I'm not actively using. Context-switch into a part of the stack I
+                haven't touched in a month and it's mostly gone - the specific flags, the service quirks, the config
+                that only makes sense if you've been staring at it all week. Fullstack work on something like
+                <code>AWS</code> is a particular kind of nightmare for this; there's just too much surface area to keep
+                warm. It's a real limitation, and I don't pretend otherwise.
+            </p>
+            <p>
+                So I think from the ground up instead. When you hold the underlying ideas, rules and best practices
+                become logical consequences rather than trivia to recall. You don't need a rule for every edge case
+                because the core concepts cover the ground for you. A pointer is just a memory address referring to
+                another location. Contiguous allocation is just elements stored side-by-side for efficient hardware
+                access. An array is those two ideas composed together. A hash map is an array plus a hashing function.
+                None of it is magic - it's just well-layered ideas, all the way down.
+            </p>
+            <p>
+                We wrap these compositions in labels - patterns, paradigms, architectures - and those labels are
+                genuinely useful for communication. But they aren't understanding. Understanding is the ability to tear
+                the label off and see what's underneath. When you can do that, the labels become natural rather than
+                memorised, and you can adapt when the problem doesn't fit a familiar shape.
+            </p>
+            <p>
+                Not everyone thinks this way, and that's genuinely a good thing. There are people who can hold an
+                enormous amount of context in their heads - who know the AWS service matrix cold, or can recall the
+                exact LINQ method for a given situation without pausing. That's a real talent, and teams need it. The
+                trick is knowing which kind of brain you have and putting it where it actually belongs.
+            </p>
+        </section>
+
+        <section>
+            <h2>What the Industry Taught Me</h2>
+
+            <p>
+                The industry can't function if every decision gets thought through from first principles. You have to
+                move forward, often with incomplete understanding, and that's okay. Shipping matters. Deadlines matter.
+                Making money matters. None of those things are the enemy of engineering - they're just variables. But
+                like all variables, they're constantly updating and need to be re-evaluated.
+            </p>
+            <p>
+                The industry has at least started to acknowledge this - iterative development, retrospectives, the idea
+                that nothing ships fully formed. But that attitude tends to stop at the code. Legacy systems are full of
+                decisions that made sense once and have been silently load-bearing ever since. Conditions change,
+                assumptions expire, and what worked yesterday might not work tomorrow. Treating any constraint as fixed
+                is where things start to go wrong.
+            </p>
+            <p>
+                I think a lot of frustration in engineering teams comes from this. People build processes and best
+                practices that make sense at the time, and then never revisit them. The process calcifies. New people
+                inherit it as gospel. And eventually nobody remembers why it exists in the first place - they just know
+                it's "how things are done." That's not engineering. That's tradition.
+            </p>
+        </section>
+
+        <section>
+            <h2>What C# Taught Me</h2>
+
+            <p>
+                A lot of where my ideas came from was my own experience - and a big part of that experience was
+                wrestling with <code>C#</code>.
+            </p>
+            <p>
+                <code>C#</code> offers a dozen ways to solve any given problem, but rarely has an opinion on which one
+                you should pick. For someone trying to reason from first principles, that lack of direction is
+                exhausting. I spent a long time looking for the "right way" to write <code>C#</code> and kept hitting
+                walls. Two senior <code>C#</code> developers can write code that looks like entirely different
+                languages, because the coherence lives in the programmer, not the tool.
+            </p>
+            <p>
+                What makes this even more frustrating is that the compiler and <code>JIT</code> are good enough to
+                optimise most of these stylistic differences away. Different approaches frequently compile down to very
+                similar <code>IL</code>, and the <code>JIT</code> optimises further from there. So the "rules" about how
+                to write <code>C#</code> aren't really about performance - they're about what the community has decided
+                is the most human-friendly way to express things. And the human they designed for isn't me.
+            </p>
+            <p>
+                <code>C#</code> is commonly praised for being readable because it resembles English. But English is full
+                of ambiguity - the same sentence can mean entirely different things depending on context, tone, and
+                assumption. Modelling a programming language after that has given me more headaches than I can count. I
+                don't want a language that reads like prose. I want one that reads like intent.
+            </p>
+            <p>
+                None of this is to say <code>C#</code> is a bad language - it clearly works brilliantly for a lot of
+                people, and I respect that. But for me it's a genuine hindrance. I've met other engineers who share that
+                struggle without quite being able to articulate why, and my current hypothesis is that this might be a
+                big part of it: the language optimises for a kind of readability that actively works against how some of
+                us think.
+            </p>
+        </section>
+
+        <section>
+            <h2>What I Actually Need from a Tool</h2>
+
+            <p>
+                That struggle taught me something concrete about what I need. I need sensible defaults and strong
+                opinions. When a tool has opinions, I can quickly determine whether it's suitable for my existing
+                problem space. If it is, I spend less time deciding how to express something and more time on what I'm
+                expressing. The difference between fighting a tool and flowing with it is night and day.
+            </p>
+            <p>
+                <code>Go</code> is a good example of this working well for me. The language has strong opinions about
+                formatting, error handling, and package structure. I don't agree with all of them, but I don't need to -
+                the fact that they exist means I can evaluate them once and move on. The cognitive load drops
+                dramatically when the tool handles the structure and lets me focus on the ideas.
+            </p>
+        </section>
+
+        <section>
+            <h2>Where This Leaves Me</h2>
+
+            <p>I keep a line in my dotfiles that I come back to a lot:</p>
+            <blockquote>
+                <em>Take care of the ideas, and the implementations take care of themselves.</em>
+            </blockquote>
+            <p>
+                Ideas don't change with context. Solutions do. When the ideas are sound, the implementations follow.
+                That's the core of how I think about engineering, and it's been the most reliable compass I've found in
+                this industry.
+            </p>
+            <p>
+                I'm not claiming any of this is right for everyone. It's shaped by my own experience, my own biases, and
+                the handful of people I've been lucky enough to learn from. But it's been right for me, and if you've
+                ever felt like the standard way of doing things in this industry doesn't quite fit how your brain works
+                - you're probably not alone.
+            </p>
+        </section>
+
+        <p><a href="/blogs/">back</a></p>
+        <script src="/public/site.js"></script>
+    </body>
+</html>
