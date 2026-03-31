@@ -35,48 +35,74 @@ async function loadData() {
   return res.json();
 }
 
-function renderWork(work) {
-  return work
-    .map(
-      (job) => `
+function listItems(items, transform = (x) => x) {
+  return `<ul>${items.map((item) => `<li>${transform(item)}</li>`).join("")}</ul>`;
+}
+
+function collapsibleSection(summary, content) {
+  return `<section><details><summary>${summary}</summary>${content}</details></section>`;
+}
+
+function renderJob(job) {
+  const reflection = job.reflection
+    ? `<section><h4>Reflection</h4><blockquote>"${job.reflection}"</blockquote></section>`
+    : "";
+  const responsibilities = `<section><h4>Responsibilities</h4>${listItems(job.details, wrapBrackets)}</section>`;
+  const skills = `<section><h4>Skills</h4><p class="skills">${job.skills.map((s) => `<code>${s}</code>`).join(SEP)}</p></section>`;
+
+  return `
         <article>
             <h3><span class="nowrap">${job.role} -</span> <span class="nowrap">${job.company}</span></h3>
             <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
-            ${job.reflection ? `<section><h4>Reflection</h4><blockquote>"${job.reflection}"</blockquote></section>` : ""}
-            <section><h4>Responsibilities</h4><ul>${job.details.map((d) => `<li>${wrapBrackets(d)}</li>`).join("")}</ul></section>
-            <section><h4>Skills</h4><p class="skills">${job.skills.map((s) => `<code>${s}</code>`).join(SEP)}</p></section>
-        </article>`,
-    )
-    .join("<hr />");
+            ${reflection}
+            ${responsibilities}
+            ${skills}
+        </article>`;
+}
+
+function renderWork(work) {
+  return work.map(renderJob).join("<hr />");
+}
+
+function renderQualification(qualification) {
+  return qualification
+    .split(/ (?=with |of |\()/)
+    .map((p) => `<span class="nowrap">${p}</span>`)
+    .join(" ");
+}
+
+function renderMajorSpecialisation(edu) {
+  if (!edu.major && !edu.specialisation) return "";
+  const major = edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : "";
+  const spec = edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : "";
+  return `<section>${major}${spec}</section>`;
+}
+
+function renderEdu(edu) {
+  const majorSpec = renderMajorSpecialisation(edu);
+  const firstDetail = `<section>${listItems(edu.details.slice(0, 1), wrapBrackets)}</section>`;
+  const awards =
+    edu.details.length > 1 ? collapsibleSection("Academic Awards", listItems(edu.details.slice(1), wrapBrackets)) : "";
+  const theatre = edu.theatre
+    ? collapsibleSection(
+        "Theatre Awards and Participation",
+        `<p><em>And you thought I was joking about being musically involved.</em></p>${listItems(edu.theatre, wrapBrackets)}`,
+      )
+    : "";
+
+  return `
+        <article>
+            <h3>${renderQualification(edu.qualification)}</h3>
+            <p class="meta">${edu.start} - ${edu.end}${SEP}<span class="nowrap">${edu.institution}</span></p>
+            ${majorSpec}
+            ${firstDetail}
+            ${awards}
+            ${theatre}
+        </article>`;
 }
 
 function renderEducation(education) {
-  return education
-    .map(
-      (edu) => `
-        <article>
-            <h3>${edu.qualification
-              .split(/ (?=with |of |\()/)
-              .map((p) => `<span class="nowrap">${p}</span>`)
-              .join(" ")}</h3>
-            <p class="meta">${edu.start} - ${edu.end}${SEP}<span class="nowrap">${edu.institution}</span></p>
-            ${edu.major || edu.specialisation ? `<section>${edu.major ? `<div><span class="label">Major:</span> ${edu.major}</div>` : ""}${edu.specialisation ? `<div><span class="label">Specialisation:</span> ${edu.specialisation}</div>` : ""}</section>` : ""}
-            <section><ul>${edu.details
-              .slice(0, 1)
-              .map((d) => `<li>${wrapBrackets(d)}</li>`)
-              .join("")}</ul></section>
-            ${
-              edu.details.length > 1
-                ? `<section><details><summary>Academic Awards</summary><ul>${edu.details
-                    .slice(1)
-                    .map((d) => `<li>${wrapBrackets(d)}</li>`)
-                    .join("")}</ul></details></section>`
-                : ""
-            }
-            ${edu.theatre ? `<section><details><summary>Theatre Awards and Participation</summary><p><em>And you thought I was joking about being musically involved.</em></p><ul>${edu.theatre.map((t) => `<li>${wrapBrackets(t)}</li>`).join("")}</ul></details></section>` : ""}
-        </article>`,
-    )
-    .join("<hr />");
+  return education.map(renderEdu).join("<hr />");
 }
 
 function renderInterests(interests) {
