@@ -173,7 +173,9 @@
                     max-width: none;
                 }
 
-                nav, .cv-hint, .page-header {
+                nav,
+                .cv-hint,
+                .page-header {
                     display: none;
                 }
 
@@ -219,39 +221,39 @@
         </div>
 
         <div class="cv-wrapper">
-        <div class="cv-page">
-            <div class="cv-header">
-                <h1>Harrison Cook</h1>
-                <span class="cv-divider">::</span>
-                <span class="cv-role">Lead Software Engineer</span>
+            <div class="cv-page">
+                <div class="cv-header">
+                    <h1>Harrison Cook</h1>
+                    <span class="cv-divider">::</span>
+                    <span class="cv-role">Lead Software Engineer</span>
+                </div>
+                <p class="cv-contact" id="cv-contact"></p>
+                <p class="summary">
+                    Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and
+                    physics completely hijacked my life plan - the result is a wild mix of showman and nerd. These days
+                    I'm leading backend development in Go, helping bring ambitious multiplayer game ideas to life.
+                    Outside of work, I've been exploring low-level game development in C - no engine, no shortcuts, just
+                    trying to understand how games work from first principles.
+                </p>
+
+                <div class="cv-body">
+                    <section id="cv-work">
+                        <h2>Work (Software Engineering)</h2>
+                    </section>
+
+                    <section id="cv-education">
+                        <h2>Education</h2>
+                    </section>
+
+                    <section id="cv-skills">
+                        <h2>Skills</h2>
+                    </section>
+
+                    <section id="cv-interests">
+                        <h2>Interests</h2>
+                    </section>
+                </div>
             </div>
-            <p class="cv-contact" id="cv-contact"></p>
-            <p class="summary">
-                Growing up in a family obsessed with music and theatre, I spent years on stage before calculus and
-                physics completely hijacked my life plan - the result is a wild mix of showman and nerd. These days
-                I'm leading backend development in Go, helping bring ambitious multiplayer game ideas to life.
-                Outside of work, I've been exploring low-level game development in C - no engine, no shortcuts,
-                just trying to understand how games work from first principles.
-            </p>
-
-            <div class="cv-body">
-                <section id="cv-work">
-                    <h2>Work (Software Engineering)</h2>
-                </section>
-
-                <section id="cv-education">
-                    <h2>Education</h2>
-                </section>
-
-                <section id="cv-skills">
-                    <h2>Skills</h2>
-                </section>
-
-                <section id="cv-interests">
-                    <h2>Interests</h2>
-                </section>
-            </div>
-        </div>
         </div>
 
         <script src="/public/site.js"></script>
@@ -260,8 +262,14 @@
                 // Contact
                 const c = data.contact;
                 const links = [];
-                if (c.github) links.push(`<a href="${c.github}"><i class="nf nf-md-github"></i>${c.github.replace("https://", "")}</a>`);
-                if (c.linkedin) links.push(`<a href="${c.linkedin}"><i class="nf nf-md-linkedin"></i>${c.linkedin.replace("https://www.", "")}</a>`);
+                if (c.github)
+                    links.push(
+                        `<a href="${c.github}"><i class="nf nf-md-github"></i>${c.github.replace("https://", "")}</a>`,
+                    );
+                if (c.linkedin)
+                    links.push(
+                        `<a href="${c.linkedin}"><i class="nf nf-md-linkedin"></i>${c.linkedin.replace("https://www.", "")}</a>`,
+                    );
                 document.querySelector("#cv-contact").innerHTML = links.join("");
 
                 const workHtml = data.work
@@ -270,25 +278,29 @@
                         (job) => `
                     <h3>${job.role} - ${job.company}</h3>
                     <p class="meta">${job.start} - ${job.end || "Present"}${SEP}${job.location}</p>
-                    <ul>${job.details.slice(0, 2).map((d) => `<li>${d}</li>`).join("")}</ul>`,
+                    <ul>${job.details
+                        .slice(0, 2)
+                        .map((d) => `<li>${d}</li>`)
+                        .join("")}</ul>`,
                     )
                     .join("");
                 document.querySelector("#cv-work").innerHTML += workHtml;
 
                 const eduHtml = data.education
-                    .map(
-                        (edu, i) => {
-                            const extras = [];
-                            if (edu.major) extras.push(`Major: ${edu.major}`);
-                            if (edu.specialisation) extras.push(`Specialisation: ${edu.specialisation}`);
-                            const all = [...extras, ...edu.details];
-                            const limit = i === 0 ? 3 : 1;
-                            return `
+                    .map((edu, i) => {
+                        const extras = [];
+                        if (edu.major) extras.push(`Major: ${edu.major}`);
+                        if (edu.specialisation) extras.push(`Specialisation: ${edu.specialisation}`);
+                        const all = [...extras, ...edu.details];
+                        const limit = i === 0 ? 3 : 1;
+                        return `
                     <h3>${edu.qualification}</h3>
                     <p class="meta">${edu.start} - ${edu.end}${SEP}${edu.institution}</p>
-                    <ul>${all.slice(0, limit).map((d) => `<li>${d}</li>`).join("")}</ul>`;
-                        },
-                    )
+                    <ul>${all
+                        .slice(0, limit)
+                        .map((d) => `<li>${d}</li>`)
+                        .join("")}</ul>`;
+                    })
                     .join("");
                 document.querySelector("#cv-education").innerHTML += eduHtml;
 
@@ -301,7 +313,8 @@
                 </div>`;
                 document.querySelector("#cv-skills").innerHTML += skillsHtml;
 
-                const intHtml = `<div class="cv-interests-table">${data.interests.slice(0, 3)
+                const intHtml = `<div class="cv-interests-table">${data.interests
+                    .slice(0, 3)
                     .map((i) => `<span class="label">${i.name}:</span><span>${i.cvSummary || i.summary}</span>`)
                     .join("")}</div>`;
                 document.querySelector("#cv-interests").innerHTML += intHtml;
