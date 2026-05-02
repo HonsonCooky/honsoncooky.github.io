@@ -93,19 +93,9 @@
   ],
   "interests": [
     {
-      "name": "Retro Gaming",
-      "summary": "Gaming has been part of my life for as long as I can remember, but something about handhelds hit differently. Pokemon Red was my first handheld game - I had a PS2 at home with better graphics, but there was real magic in being able to carry a whole world in my pocket. It made my world feel that much bigger. The Gameboy was transparent too, and being able to see the hardware inside sparked something in me that I think quietly pointed me toward computers and lower-level engineering. Today I own a GBA SP and a PS Vita, both of which have been with me since childhood. Recently, wanting a change of pace from modern games that can feel overwhelming and noisy, I pulled them back out - and stumbled into the world of retro upgrades. It's a hobby I plan to pursue seriously.",
-      "cvSummary": "Lifelong retro handheld gamer with a growing interest in console hardware and modding - a hobby with deeper roots than most people expect."
-    },
-    {
       "name": "Ergo Keyboards",
       "summary": "A childhood elbow injury left me with limited rotation in my right wrist - not a problem in school, but consistent full-time work at a keyboard changed that. I started with proper touch typing and a company-provided ergonomic keyboard, fell into keyboard-centric workflows and Neovim, and from there went deep into the world of ergonomic keyboards trying to solve a growing list of problems. A Planck EZ, a Glove80, a period of defeat, and a standard keyboard later - I landed on the ZSA Voyager, which I now have mounted to the side of my desk. Being able to rest my elbow properly again has made a real difference, and whilst I'm still a keyboard-first person, I've made peace with the mouse too.",
       "cvSummary": "Deep into ergonomic keyboards following a childhood elbow injury - currently on a ZSA Voyager after a long journey through ortholinear and split boards."
-    },
-    {
-      "name": "PC Building",
-      "summary": "My first two years at university were spent on a laptop I bought with my entire savings - a purchase I committed to so fully that I turned down the opportunity to perform at Shakespeare's Globe Theatre in London to afford it. After two years, failing eyesight and the limits of a single screen pushed me toward a proper desktop, funded by a summer working at a slaughterhouse. Once I had the power of an AMD desktop in my hands, everything opened up - bigger projects, proper gaming, and for the first time a real visibility into the hardware running beneath my software. That deepened my interest in lower-level computing considerably, and the knowledge I picked up along the way has since helped friends and family build their own setups.",
-      "cvSummary": "Self-built Linux desktop - started building after funding my first rig through a summer of manual labour, and have been helping friends and family build their own setups ever since."
     },
     {
       "name": "Linux",
