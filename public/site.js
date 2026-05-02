@@ -1,22 +1,26 @@
 const SEP = " :: ";
 
+const ROOT = document.currentScript?.dataset.root ?? ".";
+
 const NAV_LINKS = [
-  { href: "/", label: "home" },
-  { href: "/history.html", label: "history" },
-  { href: "/blogs/", label: "blogs" },
-  { href: "/cv.html", label: "cv" },
+  { href: `${ROOT}/`, label: "home" },
+  { href: `${ROOT}/history.html`, label: "history" },
+  { href: `${ROOT}/blogs/`, label: "blogs" },
+  { href: `${ROOT}/cv.html`, label: "cv" },
 ];
 
 function renderNav() {
   const nav = document.querySelector("nav");
   if (!nav) return;
   const path = window.location.pathname;
+  const homePath = new URL(NAV_LINKS[0].href, document.baseURI).pathname;
   nav.innerHTML = NAV_LINKS.map((link) => {
-    const current = path === link.href || (link.href !== "/" && path.startsWith(link.href));
+    const linkPath = new URL(link.href, document.baseURI).pathname;
+    const current = path === linkPath || (linkPath !== homePath && path.startsWith(linkPath));
     return `<a href="${link.href}"${current ? ' aria-current="page"' : ""}>${link.label}</a>`;
   }).join("");
   nav.querySelectorAll('a[aria-current="page"]').forEach((a) => {
-    if (a.getAttribute("href") !== path) return;
+    if (new URL(a.href).pathname !== path) return;
     a.addEventListener("click", (e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -31,7 +35,7 @@ function wrapBrackets(html) {
 }
 
 async function loadData() {
-  const res = await fetch("/public/data.json");
+  const res = await fetch(`${ROOT}/public/data.json`);
   return res.json();
 }
 
